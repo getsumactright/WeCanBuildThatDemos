@@ -1,0 +1,444 @@
+<!doctype html>
+
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>THE ASSIST by Marcus Ervin — Direction 04: The Presence</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#d8c1c4",
+            "surface": "#fff8f7",
+            "on-secondary-fixed": "#360e0e",
+            "secondary": "#874f4d",
+            "secondary-container": "#fdb4b0",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#f0dee1",
+            "secondary-fixed": "#ffdad8",
+            "tertiary-fixed-dim": "#cdc6b6",
+            "tertiary": "#242117",
+            "on-primary-fixed-variant": "#772e42",
+            "on-secondary-container": "#7a4341",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#a59f90",
+            "primary-container": "#621d32",
+            "surface-container": "#fce9ec",
+            "outline": "#867275",
+            "on-tertiary-fixed-variant": "#4b463b",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#fdb4b0",
+            "on-surface": "#23191b",
+            "on-background": "#23191b",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed": "#1f1b12",
+            "on-surface-variant": "#534245",
+            "on-secondary-fixed-variant": "#6c3836",
+            "primary-fixed-dim": "#ffb1c1",
+            "tertiary-container": "#3a362b",
+            "background": "#fff8f7",
+            "primary": "#46061d",
+            "inverse-surface": "#382e30",
+            "surface-container-high": "#f6e4e6",
+            "primary-fixed": "#ffd9df",
+            "inverse-primary": "#ffb1c1",
+            "tertiary-fixed": "#eae2d2",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#e18399",
+            "surface-container-low": "#fff0f2",
+            "surface-tint": "#944559",
+            "surface-container-highest": "#f0dee1",
+            "inverse-on-surface": "#ffecef",
+            "on-primary": "#ffffff",
+            "surface-bright": "#fff8f7",
+            "surface-dim": "#e8d6d8",
+            "on-primary-fixed": "#3e0118"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1.25rem",
+            "space-2xl": "7rem",
+            "gutter": "1.5rem",
+            "space-xl": "4.5rem",
+            "margin-desktop": "4rem",
+            "margin": "1.5rem",
+            "space-xs": "0.375rem",
+            "gutter-desktop": "2.5rem",
+            "space-sm": "0.75rem",
+            "space-lg": "2.5rem"
+          },
+          "fontFamily": {
+            "display-hero-mobile": ["Bodoni Moda"],
+            "headline-lg": ["Bodoni Moda"],
+            "headline-xl": ["Bodoni Moda"],
+            "label-caps": ["Manrope"],
+            "headline-xl-mobile": ["Bodoni Moda"],
+            "label-numeral": ["Bodoni Moda"],
+            "headline-lg-mobile": ["Bodoni Moda"],
+            "body-md": ["Manrope"],
+            "display-hero": ["Bodoni Moda"],
+            "headline-sm": ["Bodoni Moda"],
+            "body-lg": ["Manrope"],
+            "body-sm": ["Manrope"],
+            "subheading-editorial": ["Bodoni Moda"]
+          },
+          "fontSize": {
+            "display-hero-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "headline-lg": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.015em", "fontWeight": "500" }],
+            "headline-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.025em", "fontWeight": "400" }],
+            "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.14em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "label-numeral": ["14px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-hero": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.03em", "fontWeight": "400" }],
+            "headline-sm": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "30px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "subheading-editorial": ["20px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Editorial fine-art hairline dividers and custom zero-radius baseline */
+    *, ::before, ::after {
+      border-radius: 0px !important;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+<link rel="stylesheet" href="round-two.css"><meta name="robots" content="noindex,nofollow"></head>
+<body class="bg-[#F2EBDD] text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-surface" data-direction="04"><div class="review-strip"><a href="../index.html">← All six concepts</a><span>DESIGN DEMO · PROPOSED COPY</span></div>
+
+<header class="sticky top-0 z-50 bg-[#F2EBDD] border-b border-primary/20 backdrop-blur-sm transition-all duration-150 ease-out">
+<div class="w-full mx-auto px-margin md:px-margin-desktop py-space-md flex items-center justify-between">
+
+<a class="flex flex-col group" href="#">
+<span class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary">THE ASSIST</span>
+<span class="font-label-caps text-[9px] uppercase tracking-[0.28em] text-on-surface-variant/80 -mt-1">Personal Image Advisory</span>
+</a>
+
+<nav aria-label="Main Navigation" class="hidden md:flex items-center gap-space-lg">
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1 transition-colors duration-200" href="#approach">Approach</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-200" href="#services">Services</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-200" href="#marcus">Meet Marcus</a>
+</nav>
+
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center justify-center bg-primary-container text-surface px-6 py-3.5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-tertiary transition-all duration-150 min-h-[44px]" href="#consultation">
+          Book a consultation
+        </a>
+</div>
+</div>
+<details class="mobile-menu"><summary>Menu</summary><nav><a href="#approach">Approach</a><a href="#services">Services</a><a href="#marcus">Meet Marcus</a><a href="#consultation">Book a consultation</a></nav></details></header>
+<main>
+
+<section class="relative pt-8 pb-space-2xl px-margin md:px-margin-desktop border-b border-primary/20 overflow-hidden">
+
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end pb-8 border-b border-primary/10 gap-4">
+<div class="flex items-center gap-3">
+<span class="inline-block w-2 h-2 bg-primary-container"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-primary">Direction 04: The Presence</span>
+</div>
+<p class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">
+          Personal styling. Personal confidence.
+        </p>
+</div>
+
+<div class="pt-10 pb-12">
+<h1 class="text-display-hero-mobile md:text-display-hero font-display-hero text-primary tracking-tight leading-[0.98] max-w-6xl">
+          Dress like <br>
+<span class="italic font-serif font-light text-primary-container font-headline-xl md:text-[96px] tracking-normal">you believe</span> in yourself.
+        </h1>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+
+<div class="md:col-span-4 flex flex-col justify-between h-full order-2 md:order-1 pt-4">
+<div class="border-t border-primary/20 pt-6 space-y-6">
+<span class="font-label-numeral text-label-numeral text-secondary">[ N° 01 — PHILOSOPHY ]</span>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">Personal styling for professional men. Build self-confidence through clothing and learn essential style principles.</p>
+<div class="pt-2">
+<a class="inline-flex items-center gap-3 bg-primary-container text-surface px-8 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-tertiary transition-colors min-h-[44px]" href="#consultation">
+<span>Book a consultation</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+
+<div class="mt-12 border border-primary/20 p-2 bg-[#FAF6EF]">
+<div class="relative overflow-hidden aspect-[3/4]">
+<img alt="Marcus Ervin in an expressive casual outfit" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700 ease-out" src="../assets/web/marcus-expression.jpg" loading="eager" decoding="async">
+</div>
+<div class="pt-3 pb-1 flex justify-between items-baseline px-1">
+<span class="font-label-caps text-[11px] uppercase tracking-wider text-primary">Personal expression</span>
+<span class="font-label-numeral text-[11px] text-on-surface-variant">Fig. 1.2</span>
+</div>
+</div>
+</div>
+
+<div class="md:col-span-5 order-1 md:order-2">
+<div class="border border-primary/20 p-2.5 bg-[#FAF6EF] relative group">
+<div class="relative overflow-hidden w-full aspect-[3/4.8] bg-[#E8E0D0]">
+<img alt="Marcus Ervin in a sage suit" class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-102" src="../assets/web/marcus-sage.jpg" loading="eager" decoding="async">
+</div>
+<div class="pt-4 pb-2 px-2 flex justify-between items-center border-t border-primary/10 mt-2">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight">Marcus Ervin</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">Your guide to personal style</span>
+</div>
+</div>
+</div>
+
+<div class="md:col-span-3 flex flex-col justify-between h-full order-3 pt-4">
+<div class="border-t border-primary/20 pt-6 space-y-4">
+<span class="font-label-numeral text-label-numeral text-secondary">[ N° 02 — URBAN PROPORTION ]</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Explore how color, fit and proportion can help you express your personal style.</p>
+</div>
+
+<div class="mt-8 border border-primary/20 p-2 bg-[#FAF6EF]">
+<div class="relative overflow-hidden aspect-[3/4] bg-[#E8E0D0]">
+<img alt="Marcus Ervin in a city setting" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 ease-out" src="../assets/web/marcus-city.jpg" loading="eager" decoding="async">
+</div>
+<div class="pt-3 pb-1 flex justify-between items-baseline px-1">
+<span class="font-label-caps text-[11px] uppercase tracking-wider text-primary">Metropolitan Presence</span>
+<span class="font-label-numeral text-[11px] text-on-surface-variant">Fig. 1.3</span>
+</div>
+</div>
+<div class="mt-6 border-l-2 border-primary-container pl-4 py-1">
+<p class="font-body-sm text-body-sm italic text-primary">Style that feels like you.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-space-2xl px-margin md:px-margin-desktop border-b border-primary/20" id="approach">
+
+<div class="flex items-center gap-4 mb-8">
+<span class="font-label-numeral text-label-numeral text-secondary">01</span>
+<span class="w-12 h-[1px] bg-primary/30"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">The Guiding Principle</span>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-baseline mb-16">
+<div class="lg:col-span-7">
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary leading-tight">
+            The right clothes. <br>
+<span class="italic font-serif font-light text-primary-container">More of you.</span>
+</h2>
+</div>
+<div class="lg:col-span-5 space-y-6">
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">Clothes are personal. The right fit, colors and combinations can help you feel more comfortable showing up as yourself.</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Marcus helps you understand what works for you, so getting dressed feels clearer and more intentional.</p>
+</div>
+</div>
+
+<div class="border border-primary/20 bg-[#FAF6EF] p-8 md:p-14" id="marcus">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-4">
+<div class="border border-primary/20 p-2 bg-[#E8E0D0]">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Marcus Ervin in a sage suit" class="w-full h-full object-cover object-top" src="../assets/web/marcus-sage.jpg" loading="eager" decoding="async">
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 flex flex-col justify-center space-y-8">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="format_quote">format_quote</span>
+<blockquote class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary leading-snug font-serif italic">
+              “My purpose is to make you see the best version of yourself when you look in the mirror.”
+            </blockquote>
+<div class="pt-6 border-t border-primary/20 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<p class="font-headline-sm text-headline-sm text-primary">Marcus Ervin</p>
+<p class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mt-1">Founder &amp; Personal Stylist</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right">Personal style. Personal support.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-space-2xl px-margin md:px-margin-desktop border-b border-primary/20" id="services">
+
+<div class="flex flex-col md:flex-row justify-between md:items-end mb-16 pb-8 border-b border-primary/20 gap-6">
+<div>
+<div class="flex items-center gap-4 mb-3">
+<span class="font-label-numeral text-label-numeral text-secondary">02</span>
+<span class="w-12 h-[1px] bg-primary/30"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary">Curated Engagements</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary">Find your kind of assist.</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Three ways to work together, from independent guidance to personal shopping and concierge support.</p>
+</div>
+
+<div class="border-t border-primary/20 divide-y divide-primary/20">
+
+<article class="group py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center transition-colors duration-200 hover:bg-[#FAF6EF]/70 px-4 md:px-8">
+<div class="lg:col-span-1">
+<span class="font-label-numeral text-2xl text-secondary">01</span>
+</div>
+<div class="lg:col-span-4 space-y-2">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary-container">Strategic Advisory</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">The Outlet Pass</h3>
+</div>
+<div class="lg:col-span-4">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">Expert guidance; you shop independently. A personal style plan and shopping guidance give you a clear starting point.</p>
+</div>
+<div class="lg:col-span-3 flex items-center justify-between lg:justify-end gap-6">
+<div class="w-20 h-20 overflow-hidden border border-primary/20 flex-shrink-0 bg-[#E8E0D0]">
+<img alt="Marcus Ervin in a sage suit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="../assets/web/marcus-sage.jpg" loading="eager" decoding="async">
+</div>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-primary group-hover:text-primary-container inline-flex items-center gap-2 whitespace-nowrap" href="#consultation">
+<span>Book a consultation</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</article>
+
+<article class="group py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center transition-colors duration-200 hover:bg-[#FAF6EF]/70 px-4 md:px-8">
+<div class="lg:col-span-1">
+<span class="font-label-numeral text-2xl text-secondary">02</span>
+</div>
+<div class="lg:col-span-4 space-y-2">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary-container">Direct Collaboration</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">The Pick &amp; Roll</h3>
+</div>
+<div class="lg:col-span-4">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">Shop with Marcus and learn style principles. Build your wardrobe together with hands-on guidance.</p>
+</div>
+<div class="lg:col-span-3 flex items-center justify-between lg:justify-end gap-6">
+<div class="w-20 h-20 overflow-hidden border border-primary/20 flex-shrink-0 bg-[#E8E0D0]">
+<img alt="Marcus Ervin in an expressive casual outfit" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" src="../assets/web/marcus-expression.jpg" loading="eager" decoding="async">
+</div>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-primary group-hover:text-primary-container inline-flex items-center gap-2 whitespace-nowrap" href="#consultation">
+<span>Book a consultation</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</article>
+
+<article class="group py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center transition-colors duration-200 hover:bg-[#FAF6EF]/70 px-4 md:px-8">
+<div class="lg:col-span-1">
+<span class="font-label-numeral text-2xl text-secondary">03</span>
+</div>
+<div class="lg:col-span-4 space-y-2">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary-container">Full Concierge</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">The Give &amp; Go</h3>
+</div>
+<div class="lg:col-span-4">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">Concierge wardrobe support. Marcus helps curate a wardrobe around your style goals, with fittings and finishing details.</p>
+</div>
+<div class="lg:col-span-3 flex items-center justify-between lg:justify-end gap-6">
+<div class="w-20 h-20 overflow-hidden border border-primary/20 flex-shrink-0 bg-[#E8E0D0]">
+<img alt="Marcus Ervin in a city setting" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" src="../assets/web/marcus-city.jpg" loading="eager" decoding="async">
+</div>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-primary group-hover:text-primary-container inline-flex items-center gap-2 whitespace-nowrap" href="#consultation">
+<span>Book a consultation</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+
+<section class="py-space-xl px-margin md:px-margin-desktop border-b border-primary/20 bg-[#FAF6EF]/50"><div class="assist-demo"><div><span class="demo-kicker">A LITTLE ASSIST</span><h2>Your next move starts here.</h2><p>Confidence grows with a little support. Style, confidence, and a little rhythm.</p></div><iframe title="The Assist — crossover dribble" src="../logo-animation.html?theme=light" loading="eager" allow="autoplay"></iframe></div></section>
+
+<section class="bg-primary-container text-[#FAF6EF] py-space-2xl px-margin md:px-margin-desktop relative overflow-hidden" id="consultation">
+<div class="max-w-5xl mx-auto">
+<div class="flex items-center gap-4 mb-6">
+<span class="font-label-numeral text-label-numeral text-secondary-container">03</span>
+<span class="w-12 h-[1px] bg-secondary-container/40"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-secondary-container">Private Consultation</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-8 space-y-6">
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-[#FAF6EF] leading-tight">
+              Your next chapter starts with a conversation.
+            </h2>
+<p class="font-body-lg text-body-lg text-[#FAF6EF]/85 max-w-2xl leading-relaxed">Tell Marcus about your style goals. Start with a conversation.</p>
+
+<div class="pt-6 border-t border-[#FAF6EF]/20 grid grid-cols-1 sm:grid-cols-2 gap-6 text-[#FAF6EF]/80">
+<div>
+<span class="font-label-caps text-[10px] uppercase tracking-widest text-secondary-container block mb-1">Inquiry Protocol</span>
+<p class="font-body-sm text-body-sm">Consultation details arranged with Marcus.</p>
+</div>
+<div>
+<span class="font-label-caps text-[10px] uppercase tracking-widest text-secondary-container block mb-1">Direct Correspondence</span>
+<p class="font-body-sm text-body-sm font-medium text-[#FAF6EF]">Consultation details arranged with Marcus.</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-4">
+<button class="w-full bg-[#FAF6EF] text-primary-container hover:bg-[#E8E0D0] transition-colors py-5 px-8 font-label-caps text-label-caps uppercase tracking-widest flex items-center justify-center gap-3 min-h-[44px]" data-booking-demo="">
+<span>Book a consultation</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<p class="font-label-caps text-[10px] uppercase tracking-widest text-center text-[#FAF6EF]/60">Consultation details arranged with Marcus.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="bg-surface-container-low border-t border-primary/20">
+<div class="w-full mx-auto px-margin md:px-margin-desktop py-space-xl flex flex-col md:flex-row justify-between items-start gap-space-lg">
+
+<div class="space-y-4 max-w-md">
+<a class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary inline-block" href="#">
+          THE ASSIST
+        </a>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">© 2026 THE ASSIST by Marcus Ervin. Design concept for review.</p>
+<span class="font-label-caps text-[11px] tracking-widest uppercase text-secondary block pt-1">
+          Personal styling. Personal confidence.
+        </span>
+</div>
+
+<div class="flex flex-col sm:flex-row gap-10 md:gap-16">
+<div>
+<span class="font-label-caps text-[11px] tracking-widest uppercase text-primary block mb-4 font-bold">Structure</span>
+<ul class="space-y-3">
+<li><a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-200" href="#approach">Approach</a></li>
+<li><a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-200" href="#services">Services</a></li>
+<li><a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-200" href="#marcus">Meet Marcus</a></li>
+</ul>
+</div>
+<div>
+<span class="font-label-caps text-[11px] tracking-widest uppercase text-primary block mb-4 font-bold">Action &amp; Legal</span>
+<ul class="space-y-3">
+<li><a class="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary/40 pb-0.5 hover:text-primary-container transition-colors duration-200" href="#consultation">Book a consultation</a></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<div class="booking-feedback" role="status" hidden>Demo only — the booking connection will be added after approval.<button type="button" aria-label="Close booking notice">×</button></div><script src="round-two.js" defer></script></body></html>

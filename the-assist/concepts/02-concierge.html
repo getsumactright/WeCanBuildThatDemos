@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>THE ASSIST | Private Wardrobe & Image Consulting by Marcus Ervin</title>
+
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#161c24",
+            "surface-variant": "#2f353e",
+            "primary-container": "#0c1c2a",
+            "on-primary-fixed": "#0d1d2b",
+            "secondary": "#e1c387",
+            "error": "#ffb4ab",
+            "on-tertiary": "#2b3233",
+            "on-background": "#dde3ee",
+            "primary-fixed": "#d4e4f8",
+            "on-tertiary-container": "#7d8586",
+            "secondary-fixed-dim": "#e1c387",
+            "on-primary-container": "#758596",
+            "on-surface": "#dde3ee",
+            "tertiary-fixed": "#dde4e6",
+            "secondary-container": "#5a4616",
+            "on-primary-fixed-variant": "#394858",
+            "on-tertiary-fixed": "#161d1e",
+            "on-error": "#690005",
+            "tertiary": "#c1c8ca",
+            "tertiary-fixed-dim": "#c1c8ca",
+            "surface-container-lowest": "#090f16",
+            "surface-container-highest": "#2f353e",
+            "on-secondary-container": "#d2b57a",
+            "surface": "#0e141c",
+            "surface-tint": "#b8c8db",
+            "surface-dim": "#0e141c",
+            "primary": "#b8c8db",
+            "inverse-surface": "#dde3ee",
+            "on-surface-variant": "#c4c6cc",
+            "surface-bright": "#343a42",
+            "on-secondary-fixed": "#251a00",
+            "surface-container": "#1a2028",
+            "inverse-on-surface": "#2b3139",
+            "on-error-container": "#ffdad6",
+            "background": "#0e141c",
+            "error-container": "#93000a",
+            "surface-container-high": "#242a33",
+            "primary-fixed-dim": "#b8c8db",
+            "tertiary-container": "#151c1e",
+            "on-secondary-fixed-variant": "#584414",
+            "secondary-fixed": "#fedfa0",
+            "on-tertiary-fixed-variant": "#41484a",
+            "outline-variant": "#44474c",
+            "on-primary": "#233241",
+            "outline": "#8e9196",
+            "on-secondary": "#3f2e00",
+            "inverse-primary": "#516070"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin": "3rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1.25rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-2xl": "4rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Inter", "sans-serif"],
+            "headline-md": ["Bodoni Moda", "serif"],
+            "display-lg-mobile": ["Bodoni Moda", "serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "display-lg": ["Bodoni Moda", "serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "title-lg": ["Bodoni Moda", "serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "headline-sm": ["Bodoni Moda", "serif"],
+            "headline-lg-mobile": ["Bodoni Moda", "serif"],
+            "headline-lg": ["Bodoni Moda", "serif"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "0", "fontWeight": "400" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.15em", "fontWeight": "500" }],
+            "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Architectural hairline rendering */
+    html {
+      scroll-behavior: smooth;
+      background-color: #0c1c2a;
+    }
+    ::selection {
+      background-color: #5a4616;
+      color: #fedfa0;
+    }
+  </style>
+<style>html{scroll-behavior:smooth} body{padding-top:30px} header{top:30px!important} a{color:inherit} .review-note{white-space:nowrap;font-size:11px!important} @media(max-width:767px){body{padding-top:30px} header{padding-left:20px!important;padding-right:20px!important} h1{font-size:52px!important;line-height:1.02!important;letter-spacing:-1px!important} .px-margin-desktop{padding-left:24px!important;padding-right:24px!important} footer.grid,footer .grid{display:block!important} footer.grid>div,footer .grid>div{margin-bottom:24px} .review-note{font-size:9px!important}} .review-note{position:fixed;top:0;left:0;right:0;z-index:9999;background:#fff;color:#111;text-align:center;font:12px Arial;padding:7px;border-bottom:1px solid #ddd} :focus-visible{outline:3px solid #4378ff;outline-offset:4px}</style><style>@media(max-width:600px){.assist-embed{height:350px!important}}</style><meta name="robots" content="noindex,nofollow"></head>
+<body class="bg-primary-container text-on-surface antialiased selection:bg-secondary-container selection:text-secondary-fixed"><div class="review-note">DESIGN CONCEPT · Client photography · Booking inactive</div>
+
+<header class="w-full fixed top-0 left-0 z-50 bg-primary-container/95 backdrop-blur-sm border-b border-outline-variant/30 transition duration-200 ease-out">
+<div class="max-w-[1320px] mx-auto h-20 px-6 md:px-margin flex items-center justify-between">
+
+<a class="flex flex-col group focus:outline-none" href="#">
+<span class="font-headline-sm text-headline-sm tracking-wider uppercase text-on-surface group-hover:text-secondary transition-colors duration-200">THE ASSIST</span>
+<span class="font-label-sm text-label-sm tracking-widest text-secondary font-medium">BY MARCUS ERVIN</span>
+</a>
+
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-label-md text-label-md text-secondary border-b border-secondary pb-1 tracking-widest" href="#services">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:text-secondary transition-colors duration-200 tracking-widest" href="#philosophy">Meet Marcus</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:text-secondary transition-colors duration-200 tracking-widest" href="#consultation">Contact</a>
+</nav>
+
+<div class="flex items-center">
+<a class="inline-flex items-center justify-center px-6 py-2.5 bg-tertiary-fixed text-on-primary-fixed font-label-md text-label-md uppercase tracking-wider font-semibold border border-transparent hover:bg-secondary hover:text-on-secondary transition duration-200 ease-out shadow-none" href="#consultation">
+          Book a consultation
+        </a>
+</div>
+</div>
+</header>
+
+<main class="pt-20">
+
+<section class="relative min-h-[921px] flex items-center overflow-hidden border-b border-outline-variant/20 bg-primary-container">
+<div class="max-w-[1320px] mx-auto w-full px-6 md:px-margin py-space-2xl grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center min-h-[839px]">
+
+<div class="lg:col-span-5 z-10 flex flex-col justify-between py-6">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-3">
+<span class="w-8 h-[1px] bg-secondary"></span>
+<span class="font-label-md text-label-md tracking-widest text-secondary uppercase">PERSONAL IMAGE CONSULTING</span>
+</div>
+
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight leading-[1.08] font-normal">
+              Your next chapter.<br>
+<span class="italic text-secondary font-headline-lg">Well dressed.</span>
+</h1>
+
+<div class="pt-2 space-y-4 max-w-md">
+<p class="font-title-lg text-title-lg text-primary tracking-normal font-medium leading-relaxed">
+                Assisting you to discover the MVP you’ve ALWAYS been.
+              </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed font-light">
+                I help professional gentlemen increase self confidence by improving your style & teaching you essential fashion principles.
+              </p>
+</div>
+
+<div class="pt-6 flex items-center gap-6">
+<a class="px-8 py-3.5 bg-tertiary-fixed text-on-primary-fixed font-label-md text-label-md tracking-widest uppercase font-semibold hover:bg-secondary hover:text-on-secondary transition duration-200" href="#consultation">
+                Book a consultation
+              </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary underline underline-offset-8 tracking-widest uppercase transition-colors duration-200" href="#services">
+                The Playbook
+              </a>
+</div>
+</div>
+
+<div class="pt-16 mt-8 border-t border-outline-variant/20 flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md uppercase tracking-widest text-on-surface font-semibold">Marcus Ervin</p>
+<p class="font-body-sm text-body-sm text-secondary tracking-wide">Your style coach</p>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[18px]">straighten</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase">Private Atelier Edition</span>
+</div>
+</div>
+</div>
+
+<div class="lg:col-span-7 h-full w-full relative flex items-center justify-end">
+<div class="relative w-full h-[620px] lg:h-[720px] overflow-hidden border border-outline-variant/30 bg-surface-container-lowest">
+
+<img alt="Marcus Ervin in the city" class="w-full h-full object-cover object-center filter contrast-[1.03] brightness-[0.98]" src="../assets/originals/17-27c9f0_c46ca809963249fe878f6f95f9ebc4df~mv2.jpg">
+
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-transparent opacity-60 pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container/40 via-transparent to-transparent pointer-events-none"></div>
+
+<div class="absolute bottom-6 right-6 px-4 py-2 bg-primary-container/90 border border-outline-variant/40 flex items-center gap-3">
+<span class="w-2 h-2 bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">Direction No. 02 / The Private Fitting</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-label="Make the assist" style="padding:28px 20px;background:#0c1c2a"><iframe class="assist-embed" title="The Assist — crossover dribble" src="../logo-animation.html?theme=navy" loading="lazy" allow="autoplay" style="display:block;width:100%;max-width:720px;height:510px;margin:auto;border:0"></iframe></section>
+
+
+<section class="py-space-2xl bg-surface-container-lowest border-b border-outline-variant/20" id="services">
+<div class="max-w-[1320px] mx-auto px-6 md:px-margin">
+
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Tailored Packages</span>
+<span class="w-12 h-[1px] bg-secondary/50"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-normal">The Playbook</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md font-light">Three levels of personal styling support for professional gentlemen.</p>
+</div>
+
+<div class="divide-y divide-outline-variant/30 border-t border-b border-outline-variant/30">
+
+<article class="py-12 group hover:bg-surface-container-low/40 transition-colors duration-200">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+<div class="lg:col-span-2 flex items-center gap-4">
+<span class="font-headline-md text-headline-md text-secondary font-light">01</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Tier I</span>
+</div>
+
+<div class="lg:col-span-4 space-y-2">
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-secondary transition-colors duration-200">The Outlet Pass</h3>
+<p class="font-body-md text-body-md italic text-primary font-normal">
+                  “I pass you the ball. You run with it.”
+                </p>
+</div>
+
+<div class="lg:col-span-4 space-y-2">
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-semibold">What’s included</p>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">In-person style consultation, personalized measurement profile, custom style plan and shopping links.</p>
+</div>
+
+<div class="lg:col-span-2 flex justify-start lg:justify-end items-center self-center">
+<a class="inline-flex items-center gap-2 font-label-md text-label-md tracking-wider uppercase text-on-surface group-hover:text-secondary transition-colors duration-200" href="#consultation">
+<span>Select Plan</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+
+<article class="py-12 group hover:bg-surface-container-low/40 transition-colors duration-200">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+<div class="lg:col-span-2 flex items-center gap-4">
+<span class="font-headline-md text-headline-md text-secondary font-light">02</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Tier II</span>
+</div>
+
+<div class="lg:col-span-4 space-y-2">
+<div class="inline-flex items-center gap-2">
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-secondary transition-colors duration-200">The Pick & Roll</h3>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-widest">Collaborative</span>
+</div>
+<p class="font-body-md text-body-md italic text-primary font-normal">
+                  “We play together — step-by-step styling support.”
+                </p>
+</div>
+
+<div class="lg:col-span-4 space-y-2">
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-semibold">What’s included</p>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">In-person consultations, personalized measurement profile, bespoke color analysis, live shopping and style education.</p>
+</div>
+
+<div class="lg:col-span-2 flex justify-start lg:justify-end items-center self-center">
+<a class="inline-flex items-center gap-2 font-label-md text-label-md tracking-wider uppercase text-on-surface group-hover:text-secondary transition-colors duration-200" href="#consultation">
+<span>Select Plan</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+
+<article class="py-12 group hover:bg-surface-container-low/40 transition-colors duration-200">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+<div class="lg:col-span-2 flex items-center gap-4">
+<span class="font-headline-md text-headline-md text-secondary font-light">03</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Tier III</span>
+</div>
+
+<div class="lg:col-span-4 space-y-2">
+<div class="inline-flex items-center gap-2">
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-secondary transition-colors duration-200">The Give & Go</h3>
+<span class="px-2 py-0.5 bg-primary-container border border-secondary/40 text-secondary font-label-sm text-label-sm uppercase tracking-widest">Full Concierge</span>
+</div>
+<p class="font-body-md text-body-md italic text-primary font-normal">
+                  “Hand it off — I’ll handle everything.”
+                </p>
+</div>
+
+<div class="lg:col-span-4 space-y-2">
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-semibold">What’s included</p>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">Full wardrobe plan curated and delivered, alterations, fittings, personal lookbook, dry cleaning and shoe care.</p>
+</div>
+
+<div class="lg:col-span-2 flex justify-start lg:justify-end items-center self-center">
+<a class="inline-flex items-center gap-2 font-label-md text-label-md tracking-wider uppercase text-on-surface group-hover:text-secondary transition-colors duration-200" href="#consultation">
+<span>Select Plan</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+
+<div class="mt-12 pt-8 flex flex-col md:flex-row items-center justify-between border-t border-outline-variant/20 gap-4 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">tune</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Ancillary Concierge Disciplines</span>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 font-label-md text-label-md text-on-surface-variant tracking-wider">
+<span class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary"></span>Haircut and/or beard trim</span>
+<span class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary"></span>Workout &amp; weight training session</span>
+<span class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary"></span>Public speaking &amp; professional presence training</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="relative w-full border-t border-b border-outline-variant/30 overflow-hidden bg-primary-container">
+<div class="grid grid-cols-1 lg:grid-cols-12 min-h-[520px]">
+
+<div class="lg:col-span-8 relative h-[380px] lg:h-auto overflow-hidden">
+<img alt="Suit and tie detail from the original site" class="w-full h-full object-cover object-center filter brightness-[0.92] contrast-[1.05]" src="../assets/originals/10-27c9f0_90635fd944094d369be89a42aea288db~mv2.jpeg">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-primary-container hidden lg:block"></div>
+</div>
+
+<div class="lg:col-span-4 p-8 lg:p-14 flex flex-col justify-between bg-primary-container border-l border-outline-variant/20">
+<div class="space-y-6">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Tension & Fit</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-normal leading-snug">
+              Every millimeter serves intention.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed font-light">Learn essential fashion principles and discover a style that feels like you.</p>
+</div>
+<div class="pt-8 border-t border-outline-variant/20 space-y-3">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">PERSONAL STYLE</span>
+<span class="font-label-md text-label-md text-secondary">Clothing that reflects you</span>
+</div>
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">THE APPROACH</span>
+<span class="font-label-md text-label-md text-secondary">Learn lasting style principles</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-space-2xl bg-surface-container-lowest border-b border-outline-variant/20" id="philosophy">
+<div class="max-w-[1320px] mx-auto px-6 md:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+
+<div class="lg:col-span-6 grid grid-cols-12 gap-4 items-end">
+
+<div class="col-span-7 space-y-3">
+<div class="h-[460px] overflow-hidden border border-outline-variant/30 bg-surface-container">
+<img alt="Marcus Ervin in a sage suit" class="w-full h-full object-cover object-top hover:scale-[1.02] transition-transform duration-500 ease-out" src="../assets/originals/05-27c9f0_1e8872b11b674a02985f6e16423a2e16~mv2.jpeg">
+</div>
+<div class="flex justify-between items-baseline px-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Plate 01</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-medium">Formal Architecture</span>
+</div>
+</div>
+
+<div class="col-span-5 space-y-3">
+<div class="h-[360px] overflow-hidden border border-outline-variant/30 bg-surface-container">
+<img alt="Marcus Ervin in colorful casual clothing" class="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-500 ease-out" src="../assets/originals/12-27c9f0_ad59c86b7be346bfae42b5dbd97d766a~mv2.jpeg">
+</div>
+<div class="flex justify-between items-baseline px-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Plate 02</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-medium">Casual Fluidity</span>
+</div>
+</div>
+</div>
+
+<div class="lg:col-span-6 lg:pl-10 space-y-8 mt-12 lg:mt-0">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">The Stylist Behind The Assist</span>
+<span class="w-8 h-[1px] bg-secondary/50"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-normal leading-tight">
+                “Think of me as your style coach, trainer, and barber — all in one.”
+              </h2>
+</div>
+<div class="space-y-5 text-on-surface-variant font-light">
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">As I grew older, I began to realize that my style and clothing gave me a great head start in feeling better about myself and my image.</p>
+<p class="font-body-md text-body-md leading-relaxed">As a huge basketball fan and a lover of some of the game’s premier point guards, my aim is similar: to pass you the ball and facilitate your success.</p>
+<p class="font-body-md text-body-md leading-relaxed">My purpose is to make you see the best version of yourself when you look in the mirror…because when you see it, you will begin to believe it.</p>
+</div>
+
+<div class="pt-6 border-t border-outline-variant/20 grid grid-cols-2 gap-6">
+<div>
+<p class="font-title-lg text-title-lg text-secondary font-normal mb-1">Intentional</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Every lapel width, texture contrast, and shoe choice selected with purpose.</p>
+</div>
+<div>
+<p class="font-title-lg text-title-lg text-secondary font-normal mb-1">Personal</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Crafted directly around your posture, skin tones, and daily physical reality.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-space-2xl bg-primary-container border-b border-outline-variant/20 relative" id="consultation">
+<div class="max-w-[1320px] mx-auto px-6 md:px-margin">
+<div class="max-w-3xl mx-auto bg-surface-container-low border border-outline-variant/30 p-8 md:p-14">
+<div class="text-center space-y-4 mb-10">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Let’s connect</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-normal">Ready to elevate your game?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mx-auto font-light">Tell Marcus about your style goals. This concept shows the proposed consultation entry point.</p>
+</div>
+
+<form class="space-y-8" onsubmit="return false">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+<div class="space-y-2">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block" for="client-name">
+                  Full Name
+                </label>
+<input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant/60 focus:border-secondary focus:ring-0 text-on-surface font-body-md text-body-md py-3 px-1 placeholder-on-surface-variant/40 transition-colors duration-200" id="client-name" placeholder="e.g. Julian Vance" required="" type="text" disabled="disabled">
+</div>
+
+<div class="space-y-2">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block" for="client-email">Email</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant/60 focus:border-secondary focus:ring-0 text-on-surface font-body-md text-body-md py-3 px-1 placeholder-on-surface-variant/40 transition-colors duration-200" id="client-email" placeholder="julian@privateoffice.com" required="" type="email" disabled="disabled">
+</div>
+</div>
+
+<div class="space-y-3">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block">
+                Preferred Advisory Framework
+              </label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<label class="relative flex items-center p-4 border border-outline-variant/30 cursor-pointer hover:border-secondary/60 transition-colors bg-surface-container-lowest">
+<input checked="" class="text-secondary focus:ring-secondary focus:ring-offset-0 bg-surface-container border-outline" name="package" type="radio" value="outlet-pass" disabled="disabled">
+<div class="ml-3">
+<span class="block font-label-md text-label-md uppercase text-on-surface">The Outlet Pass</span>
+<span class="block font-body-sm text-body-sm text-outline">Tier 01</span>
+</div>
+</label>
+<label class="relative flex items-center p-4 border border-outline-variant/30 cursor-pointer hover:border-secondary/60 transition-colors bg-surface-container-lowest">
+<input class="text-secondary focus:ring-secondary focus:ring-offset-0 bg-surface-container border-outline" name="package" type="radio" value="pick-and-roll" disabled="disabled">
+<div class="ml-3">
+<span class="block font-label-md text-label-md uppercase text-on-surface">The Pick & Roll</span>
+<span class="block font-body-sm text-body-sm text-outline">Tier 02</span>
+</div>
+</label>
+<label class="relative flex items-center p-4 border border-outline-variant/30 cursor-pointer hover:border-secondary/60 transition-colors bg-surface-container-lowest">
+<input class="text-secondary focus:ring-secondary focus:ring-offset-0 bg-surface-container border-outline" name="package" type="radio" value="give-and-go" disabled="disabled">
+<div class="ml-3">
+<span class="block font-label-md text-label-md uppercase text-on-surface">The Give & Go</span>
+<span class="block font-body-sm text-body-sm text-outline">Tier 03</span>
+</div>
+</label>
+</div>
+</div>
+
+<div class="space-y-2">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block" for="client-goals">
+                Primary Style Objective (Optional)
+              </label>
+<textarea class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant/60 focus:border-secondary focus:ring-0 text-on-surface font-body-md text-body-md py-3 px-1 placeholder-on-surface-variant/40 transition-colors duration-200 resize-none" id="client-goals" placeholder="Key transitions: upcoming speaking tour, executive promotion, wardrobe refresh..." rows="2" disabled="disabled"></textarea>
+</div>
+
+<div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-6">
+<button class="w-full sm:w-auto px-10 py-4 bg-tertiary-fixed text-on-primary-fixed font-label-md text-label-md uppercase tracking-widest font-semibold hover:bg-secondary hover:text-on-secondary transition duration-200" type="button" disabled="disabled">
+                Book a consultation
+              </button>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span>Concept preview. Booking is not connected.</span>
+</div>
+</div>
+
+<div class="hidden p-4 bg-surface-container border border-secondary text-secondary font-body-sm text-body-sm text-center" id="confirmation-msg"></div>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 px-6 md:px-margin py-space-2xl max-w-[1320px] mx-auto flex flex-col gap-space-xl">
+
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-8 pb-8 border-b border-outline-variant/20">
+<div class="space-y-1">
+<span class="font-headline-md text-headline-md tracking-wider uppercase text-on-surface">THE ASSIST</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Personal image consulting by Marcus Ervin</p>
+</div>
+
+<nav class="flex flex-wrap items-center gap-8 font-label-sm text-label-sm tracking-widest uppercase">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#services">Services</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#philosophy">Meet Marcus</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#services">Services</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#consultation">Direct Inquiries</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Privacy</a>
+</nav>
+</div>
+
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant/70">
+<p>© 2026 THE ASSIST. Design concept for review.</p>
+<p class="font-label-sm text-label-sm tracking-widest text-outline uppercase">Built for Discerning Leaders</p>
+</div>
+</footer>
+<script>window.addEventListener('message',e=>{if(e.origin!==location.origin||!Number.isFinite(e.data?.assistHeight))return;for(const f of document.querySelectorAll('iframe'))if(f.contentWindow===e.source){f.style.setProperty('height',Math.min(1000,Math.max(200,e.data.assistHeight))+'px','important');f.style.setProperty('aspect-ratio','auto','important');}});</script></body></html>
