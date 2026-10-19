@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Assist — Four Quarters</title>
+<meta name="description" content="Marcus Ervin helps professional gentlemen increase self-confidence by improving their style and teaching essential fashion principles. Book a consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --espresso:#1c130e; --espresso-2:#251912; --espresso-3:#2f2018;
+  --hardwood:#c98b4e; --hardwood-dim:rgba(201,139,78,.38);
+  --orange:#e8642c; --orange-ink:#ff8a52;
+  --chalk:#f3e9da; --chalk-dim:rgba(243,233,218,.72); --chalk-line:rgba(243,233,218,.18);
+  --court:#f7f1e6; --ink:#2a1c14;
+  --display:'Anton',Impact,'Arial Narrow',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --body:'Work Sans',system-ui,sans-serif;
+  --pad:clamp(16px,4vw,48px);
+  --max:1360px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--espresso);color:var(--chalk);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.skip{position:absolute;left:-999px;top:8px;background:var(--orange);color:var(--ink);padding:12px 16px;z-index:100}
+.skip:focus{left:8px}
+/* grain */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 22px;font:700 13px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid var(--orange);background:var(--orange);color:var(--ink);transition:transform .16s ease,box-shadow .16s ease,background .16s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 #000}
+.btn:active{transform:none;box-shadow:none}
+.btn--ghost{background:transparent;color:var(--chalk);border-color:var(--chalk)}
+.btn--ghost:hover{background:var(--chalk);color:var(--espresso)}
+
+/* header */
+.top{position:sticky;top:0;z-index:50;background:rgba(28,19,14,.94);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--chalk-line)}
+.top__row{display:flex;align-items:center;gap:24px;min-height:68px}
+.brand{font:400 26px/1 var(--display);letter-spacing:.04em;text-decoration:none;color:var(--chalk);display:flex;align-items:center;gap:6px;min-height:44px}
+.brand b{font-weight:400;color:var(--orange)}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:16px 12px;color:var(--chalk-dim)}
+.nav a:hover{color:var(--chalk)}
+.nav a.btn,.nav[data-open="true"] a.btn{color:var(--ink)}
+.top .btn{min-height:44px;padding:10px 16px}
+.menu-btn{display:none;margin-left:auto;min-height:44px;min-width:44px;background:none;border:1px solid var(--chalk-line);color:var(--chalk);font:700 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:0 14px}
+.ticker{display:flex;border-top:1px solid var(--chalk-line);overflow:hidden}
+.ticker a{flex:1;display:flex;gap:10px;align-items:center;padding:9px 12px;text-decoration:none;font:500 11px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--chalk-dim);border-right:1px solid var(--chalk-line);transition:background .2s,color .2s}
+.ticker a:last-child{border-right:0}
+.ticker a span{color:var(--hardwood);font-weight:700}
+.ticker a.is-live{background:var(--espresso-3);color:var(--chalk)}
+.ticker a.is-live span{color:var(--orange-ink)}
+.ticker a.is-live::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange);margin-left:auto;box-shadow:0 0 0 3px rgba(232,100,44,.25)}
+
+/* hero */
+.hero{padding:clamp(32px,4.5vw,64px) 0 clamp(48px,6vw,88px);border-bottom:1px solid var(--chalk-line)}
+.hero__grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:center}
+.report{display:flex;flex-wrap:wrap;gap:6px 18px;border:1px solid var(--chalk-line);padding:10px 14px;color:var(--chalk-dim);margin-bottom:22px;width:max-content;max-width:100%}
+.report b{color:var(--hardwood);font-weight:700}
+.hero h1{font:400 clamp(44px,6.5vw,112px)/.9 var(--display);text-transform:uppercase;letter-spacing:.005em;margin:0}
+.hero h1 .o{color:var(--orange)}
+.hero h1 .h{color:var(--hardwood)}
+.hero h1 .line{display:block;white-space:nowrap}
+.hero__lede{font-size:clamp(18px,1.5vw,21px);max-width:40ch;margin:24px 0 26px;color:var(--chalk)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px}
+.box{display:grid;grid-template-columns:repeat(3,1fr);margin-top:36px;border-top:1px solid var(--chalk-line);max-width:560px}
+.box div{padding:16px 0 0}
+.box strong{display:block;font:700 clamp(30px,3vw,44px)/1 var(--mono);letter-spacing:-.04em;color:var(--chalk)}
+.box div:nth-child(2) strong{color:var(--hardwood)}
+.box div:nth-child(3) strong{color:var(--orange-ink)}
+.box span{font:500 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--chalk-dim)}
+.cover{border:1px solid var(--chalk-line);background:var(--espresso-2);padding:14px;box-shadow:6px 6px 0 #0d0805;transform:rotate(.6deg)}
+.cover__head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:2px 2px 12px}
+.cover__head strong{font:400 26px/1 var(--display);letter-spacing:.03em;color:var(--orange)}
+.cover__img{position:relative;aspect-ratio:5/6;overflow:hidden;background:#000}
+.cover__img img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.cover__tag{position:absolute;left:12px;bottom:12px;background:var(--espresso);border:1px solid var(--chalk);padding:7px 10px}
+.cover__foot{display:flex;justify-content:space-between;gap:12px;padding:12px 2px 0;color:var(--chalk-dim)}
+
+/* section heads */
+.sec{padding:clamp(64px,9vw,128px) 0;border-bottom:1px solid var(--chalk-line)}
+.sec__head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 48px;align-items:end;padding-bottom:28px;margin-bottom:clamp(28px,4vw,48px);border-bottom:1px solid var(--chalk-line)}
+.eyebrow{color:var(--hardwood);margin:0 0 14px}
+.sec h2{font:400 clamp(44px,6.4vw,96px)/.9 var(--display);text-transform:uppercase;margin:0;letter-spacing:.01em}
+.sec__head>p{margin:0;max-width:44ch;color:var(--chalk-dim);justify-self:end}
+
+/* quarters */
+.quarters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--chalk-line)}
+.q{position:relative;padding:28px 24px 26px;border-right:1px solid var(--chalk-line);display:flex;flex-direction:column;gap:10px;min-height:300px;transition:background .25s}
+.q:last-child{border-right:0}
+.q:hover{background:var(--espresso-2)}
+.q__num{display:flex;align-items:baseline;gap:12px}
+.q__num strong{font:700 56px/1 var(--mono);letter-spacing:-.05em;color:var(--hardwood)}
+.q:last-child .q__num strong{color:var(--orange-ink)}
+.q h3{font:400 28px/1.05 var(--display);text-transform:uppercase;margin:6px 0 0;letter-spacing:.02em}
+.q__tier{color:var(--hardwood)}
+.q p{margin:0;color:var(--chalk-dim);font-size:16px}
+.q__foot{margin-top:auto;padding-top:16px;border-top:1px solid var(--chalk-line);color:var(--chalk-dim)}
+.q__bar{height:4px;background:var(--chalk-line);margin-top:10px;position:relative}
+.q__bar i{position:absolute;inset:0 auto 0 0;background:var(--hardwood);width:var(--w)}
+.q:last-child .q__bar i{background:var(--orange)}
+.quote-line{margin:28px 0 0;font:400 clamp(24px,2.8vw,38px)/1.12 var(--display);letter-spacing:.01em;color:var(--chalk);max-width:30ch}
+.quote-line span{color:var(--orange)}
+
+/* plays */
+.plays{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.play{display:flex;flex-direction:column;border:1px solid var(--chalk-line);background:var(--espresso-2);box-shadow:4px 4px 0 #0d0805}
+.play--feature{background:var(--court);color:var(--ink);border-color:var(--court)}
+.play__board{position:relative;background:#140d09;margin:14px;border:1px solid var(--chalk-line)}
+.play--feature .play__board{background:#20150f;color:var(--chalk)}
+.play__board svg{display:block;width:100%;height:auto}
+.play__run{position:absolute;right:8px;top:8px;min-height:44px;padding:6px 10px;background:var(--espresso);border:1px solid var(--chalk-line);color:var(--chalk);font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.play__run:hover{border-color:var(--orange);color:var(--orange-ink)}
+.play__cap{display:flex;justify-content:space-between;padding:8px 12px;border-top:1px solid var(--chalk-line);color:var(--chalk-dim);font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.play__body{padding:8px 26px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
+.play__tier{color:var(--hardwood)}
+.play--feature .play__tier{color:#8a4b17}
+.play h3{font:400 clamp(34px,3.2vw,46px)/.95 var(--display);text-transform:uppercase;margin:0;letter-spacing:.01em}
+.play__line{font:500 15px/1.5 var(--mono);font-style:italic;color:var(--orange-ink);margin:0}
+.play--feature .play__line{color:#a3410f}
+.play__for{margin:0;color:var(--chalk-dim);font-size:16px}
+.play--feature .play__for{color:#5a4434}
+.play ul{list-style:none;margin:6px 0 0;padding:14px 0 0;border-top:1px dashed var(--hardwood-dim);display:grid;gap:9px}
+.play li{display:grid;grid-template-columns:22px 1fr;font-size:15.5px;line-height:1.45}
+.play li::before{content:"×";font:700 15px var(--mono);color:var(--hardwood)}
+.play--feature li::before{color:#a3410f}
+.play .btn{margin-top:auto;align-self:stretch}
+.play:not(.play--feature) .btn{background:transparent;color:var(--chalk);border-color:var(--chalk-line)}
+.play:not(.play--feature) .btn:hover{border-color:var(--orange);color:var(--orange-ink);box-shadow:3px 3px 0 #000}
+.play--feature .btn{background:var(--ink);border-color:var(--ink);color:var(--court)}
+.play__spacer{flex:1;min-height:12px}
+.badge{position:absolute;left:-1px;top:-1px;background:var(--orange);color:var(--ink);font:700 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:6px 10px}
+
+/* court svg */
+.court line,.court rect,.court path.c,.court circle.c{fill:none;stroke:rgba(243,233,218,.32);stroke-width:1.4}
+.court .p{fill:var(--espresso);stroke:var(--chalk);stroke-width:1.6}
+.court .pt{fill:var(--chalk);font:700 13px var(--mono);text-anchor:middle;dominant-baseline:central}
+.court .run{fill:none;stroke:var(--chalk);stroke-width:2.2;stroke-linecap:round}
+.court .pass{fill:none;stroke:var(--orange);stroke-width:2.2;stroke-dasharray:6 6;stroke-linecap:round}
+.court .drib{fill:none;stroke:var(--hardwood);stroke-width:2;stroke-linecap:round}
+.court .screen{stroke:var(--chalk);stroke-width:3;stroke-linecap:round}
+.court .ball{fill:var(--orange)}
+.court .lbl{fill:rgba(243,233,218,.6);font:500 9px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.js .court [data-step]{opacity:0;transition:opacity .35s ease}
+.js .court [data-step].on{opacity:1}
+.js .court .run[data-step],.js .court .drib[data-step]{stroke-dasharray:1;stroke-dashoffset:1;opacity:1;transition:stroke-dashoffset .7s ease}
+.js .court .run[data-step].on,.js .court .drib[data-step].on{stroke-dashoffset:0}
+.js .court .ball{opacity:0}
+.js .court.running .ball{opacity:1}
+
+/* and ones */
+.ones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--chalk-line)}
+.one{padding:30px 28px 32px;border-right:1px solid var(--chalk-line);display:flex;flex-direction:column;gap:14px;position:relative}
+.one:last-child{border-right:0}
+.one__n{font:400 88px/.8 var(--display);color:transparent;-webkit-text-stroke:1.4px var(--hardwood)}
+.one h3{font:400 30px/1 var(--display);text-transform:uppercase;margin:0;letter-spacing:.02em}
+.one p{margin:0;color:var(--chalk-dim);font-size:16px}
+.one__foot{margin-top:auto;padding-top:14px;border-top:1px solid var(--chalk-line);color:var(--hardwood)}
+.ones-note{margin:16px 0 0;color:var(--chalk-dim)}
+.insert{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);margin-top:clamp(28px,4vw,48px);background:var(--court);color:var(--ink)}
+.insert img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.insert div{padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:12px}
+.insert h3{font:400 clamp(30px,3.4vw,48px)/.95 var(--display);text-transform:uppercase;margin:0}
+.insert p{margin:0;color:#4a3627;max-width:52ch}
+.insert .mono{color:#8a4b17}
+
+/* coach */
+.coach{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:center}
+.coach__photo{border:1px solid var(--chalk-line);padding:12px;background:var(--espresso-2)}
+.coach__photo img{aspect-ratio:4/5;width:100%;object-fit:cover;object-position:50% 30%}
+.coach__photo p{display:flex;justify-content:space-between;margin:12px 2px 0;color:var(--chalk-dim)}
+.coach h2{font:400 clamp(40px,5vw,76px)/.92 var(--display);text-transform:uppercase;margin:0 0 28px}
+.mirror{margin:0 0 28px;padding:24px 28px;border-left:4px solid var(--orange);background:var(--espresso-2)}
+.mirror p{font:400 clamp(22px,2.2vw,30px)/1.2 var(--display);letter-spacing:.01em;margin:0 0 14px}
+.mirror cite{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--orange-ink)}
+.coach__story{color:var(--chalk-dim);max-width:62ch}
+.coach__story p{margin:0 0 16px}
+details.more{border-top:1px solid var(--chalk-line);margin:8px 0 28px;padding-top:4px}
+details.more summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:52px;font:700 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--chalk)}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:"+";font-size:20px;color:var(--orange)}
+details.more[open] summary::after{content:"–"}
+
+/* jumbotron */
+.jumbo{border:1px solid var(--hardwood);padding:12px;background:#120c08;max-width:1040px;margin:0 auto}
+.jumbo__bar{display:flex;justify-content:space-between;gap:12px;padding:6px 6px 12px;color:var(--chalk-dim)}
+.jumbo__bar b{color:var(--orange-ink);font-weight:700}
+.jumbo__screen{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden;border:1px solid var(--chalk-line)}
+.jumbo__screen video,.jumbo__screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.jumbo__screen video{mix-blend-mode:screen}
+.is-playing .jumbo__screen img{visibility:hidden}
+.jumbo__screen::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px)}
+.jumbo__ctrl{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:12px 6px 4px}
+.jumbo__ctrl p{margin:0;color:var(--chalk-dim);font-size:14px}
+.jumbo__ctrl .btns{display:flex;gap:8px}
+.jumbo__ctrl button{min-height:44px;padding:8px 14px;background:transparent;border:1px solid var(--chalk-line);color:var(--chalk);font:700 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.jumbo__ctrl button:hover{border-color:var(--orange)}
+[hidden]{display:none!important}
+
+/* ticket */
+.ticket{display:grid;grid-template-columns:240px minmax(0,1fr);background:var(--court);color:var(--ink);box-shadow:6px 6px 0 #0d0805;position:relative}
+.stub{position:relative;padding:32px 26px;border-right:2px dashed rgba(42,28,20,.35);display:flex;flex-direction:column;gap:14px;background:var(--hardwood);color:var(--ink)}
+.stub::before,.stub::after{content:"";position:absolute;right:-13px;width:24px;height:24px;border-radius:50%;background:var(--espresso)}
+.stub::before{top:-12px}.stub::after{bottom:-12px}
+.stub strong{font:400 54px/.9 var(--display);text-transform:uppercase}
+.stub .mono{color:#3b2516}
+.stub dl{margin:auto 0 0;display:grid;gap:8px}
+.stub dt{font:700 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#2a1a0e}
+.stub dd{margin:0 0 6px;font:400 20px/1 var(--display);text-transform:uppercase}
+.ticket form{padding:clamp(24px,4vw,44px)}
+.ticket h2{font:400 clamp(40px,5vw,72px)/.9 var(--display);text-transform:uppercase;margin:0 0 10px;color:var(--ink)}
+.ticket .intro{margin:0 0 24px;color:#4a3627;max-width:56ch}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field--full{grid-column:1/-1}
+.field label{font:700 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#4a3627}
+.field input,.field textarea{font:400 17px/1.4 var(--body);color:var(--ink);background:#fffaf2;border:1px solid rgba(42,28,20,.4);border-radius:0;padding:12px 14px;min-height:48px}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(232,100,44,.25)}
+.field [aria-invalid="true"]{border-color:#b3261e}
+.ticket__foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-top:22px;padding-top:18px;border-top:1px dashed rgba(42,28,20,.35)}
+.barcode{display:flex;align-items:center;gap:12px;color:#4a3627}
+.barcode i{display:block;width:92px;height:34px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px)}
+.status{flex-basis:100%;margin:0;font-size:15px;color:#4a3627;min-height:1.4em}
+
+/* footer */
+.foot{padding:48px 0 40px}
+.foot__row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-end}
+.foot .brand{font-size:40px}
+.foot ul{list-style:none;display:flex;flex-wrap:wrap;gap:4px 8px;margin:0;padding:0}
+.foot ul a{display:inline-flex;min-height:44px;align-items:center;padding:0 10px;font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--chalk-dim)}
+.foot ul a:hover{color:var(--chalk)}
+.foot__note{margin:28px 0 0;padding-top:20px;border-top:1px solid var(--chalk-line);color:var(--chalk-dim);font-size:13.5px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* reveal */
+.js [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js [data-reveal]{opacity:1;transform:none;transition:none}}
+
+/* responsive */
+@media (max-width:1080px){
+  .nav,.top__row>.btn{display:none}
+  .menu-btn{display:inline-flex;align-items:center}
+  .nav[data-open="true"]{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;background:var(--espresso);border-bottom:1px solid var(--chalk-line);padding:8px var(--pad) 20px}
+  .nav[data-open="true"] a{padding:14px 0;font-size:14px;border-bottom:1px solid var(--chalk-line);color:var(--chalk)}
+  .nav[data-open="true"] .nav__cta{display:inline-flex;margin-top:14px;border:0}
+  .quarters{grid-template-columns:1fr 1fr}
+  .q:nth-child(2){border-right:0}
+  .q:nth-child(-n+2){border-bottom:1px solid var(--chalk-line)}
+  .plays{grid-template-columns:1fr;max-width:640px;margin:0 auto}
+}
+.nav__cta{display:none}
+@media (max-width:820px){
+  .hero__grid,.coach,.insert,.sec__head{grid-template-columns:minmax(0,1fr)}
+  .sec__head>p{justify-self:start}
+  .cover{transform:none;max-width:520px}
+  .ones{grid-template-columns:1fr}
+  .one{border-right:0;border-bottom:1px solid var(--chalk-line)}
+  .one:last-child{border-bottom:0}
+  .ticket{grid-template-columns:1fr}
+  .stub{border-right:0;border-bottom:2px dashed rgba(42,28,20,.35)}
+  .stub::before,.stub::after{top:auto;bottom:-13px;right:auto}
+  .stub::before{left:-12px}.stub::after{right:-12px;left:auto}
+  .stub dl{grid-template-columns:repeat(3,auto);justify-content:start;gap:4px 24px}
+  .ticker a:not(.is-live){flex:0 0 auto}
+  .ticker a{padding:9px 10px}
+  .ticker a em{display:none}
+}
+@media (max-width:560px){
+  body{font-size:16.5px}
+  .quarters{grid-template-columns:1fr}
+  .q{border-right:0;border-bottom:1px solid var(--chalk-line);min-height:0}
+  .q:last-child{border-bottom:0}
+  .fields{grid-template-columns:1fr}
+  .box{gap:14px}
+  .box strong{font-size:28px}
+  .box span{font-size:11px;letter-spacing:.06em;display:block;margin-top:6px}
+  .hero__cta .btn{flex:1 1 100%}
+  .jumbo__bar span:last-child{display:none}
+}
+</style>
+<meta name="robots" content="noindex,nofollow"></head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top__row">
+    <a class="brand" href="#top" aria-label="The Assist — home">THE <b>ASSIST</b></a>
+    <button class="menu-btn" data-nav-toggle aria-controls="site-nav" aria-expanded="false">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="#quarters">Four quarters</a>
+      <a href="#plays">The plays</a>
+      <a href="#and-ones">And 1's</a>
+      <a href="#coach">Meet Marcus</a>
+      <a class="btn nav__cta" href="#consultation">Book a consultation</a>
+    </nav>
+    <a class="btn" href="#consultation">Book a consultation</a>
+  </div>
+  <div class="wrap">
+    <nav class="ticker" aria-label="Page progress">
+      <a href="#top" data-spy="top"><span>Q1</span> Tip-off <em>· the promise</em></a>
+      <a href="#plays" data-spy="plays"><span>Q2</span> The plays <em>· three packages</em></a>
+      <a href="#coach" data-spy="coach"><span>Q3</span> The coach <em>· Marcus</em></a>
+      <a href="#consultation" data-spy="consultation"><span>Q4</span> Book <em>· your consultation</em></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="report mono"><b>Programme · Round 3</b> Men's personal styling · a human guide, one-on-one</p>
+        <h1 id="hero-title">
+          <span class="line">Discover <span class="h">the MVP</span></span>
+          <span class="line">you've always</span>
+          <span class="line o">been.</span>
+        </h1>
+        <p class="hero__lede">I help professional gentlemen increase self confidence by improving your style &amp; teaching you essential fashion principles.</p>
+        <div class="hero__cta">
+          <a class="btn" href="#consultation">Book a consultation</a>
+          <a class="btn btn--ghost" href="#plays">See the plays</a>
+        </div>
+        <div class="box" aria-label="At a glance">
+          <div><strong>03</strong><span>Plays to choose from</span></div>
+          <div><strong>03</strong><span>And 1's add-ons</span></div>
+          <div><strong>1:1</strong><span>One-on-one guidance</span></div>
+        </div>
+      </div>
+      <figure class="cover" style="margin:0">
+        <div class="cover__head"><strong>The Assist</strong><span class="mono" style="color:var(--chalk-dim)">Game-night programme</span></div>
+        <div class="cover__img">
+          <img src="../assets/web/r3/sage-1600.webp" srcset="../assets/web/r3/sage-800.webp 569w, ../assets/web/r3/sage-1600.webp 1016w" sizes="(max-width:820px) 92vw, 40vw" width="1016" height="1429" alt="Marcus Ervin in a sage double-breasted check suit and white turtleneck, adjusting his jacket" fetchpriority="high">
+          <span class="cover__tag mono">Starting line-up · No. 1</span>
+        </div>
+        <figcaption class="cover__foot mono"><span>Marcus Ervin · style coach, trainer &amp; barber</span><span>Pg. 01</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="quarters" aria-labelledby="quarters-title">
+    <div class="wrap">
+      <div class="sec__head">
+        <div>
+          <p class="eyebrow mono">The mission</p>
+          <h2 id="quarters-title">Four quarters.<br>One confident you.</h2>
+        </div>
+        <p>Assisting you to discover the MVP you've <em>always</em> been. Start with a consultation, then pick the level of support that fits your life.</p>
+      </div>
+      <ol class="quarters" role="list" style="list-style:none;margin:0;padding:0">
+        <li class="q" data-reveal>
+          <div class="q__num"><strong>Q1</strong><span class="mono" style="color:var(--chalk-dim)">Tip-off</span></div>
+          <h3>The consultation</h3>
+          <p>An opportunity for me to get to know you as a person &amp; learn what your specific needs and wants are.</p>
+          <div class="q__foot mono">Every play starts here<div class="q__bar" style="--w:25%"><i></i></div></div>
+        </li>
+        <li class="q" data-reveal>
+          <div class="q__num"><strong>Q2</strong><span class="q__tier mono">The Rookie Deal</span></div>
+          <h3>The Outlet Pass</h3>
+          <p>I pass you the ball. You run with it.</p>
+          <div class="q__foot mono">You shop solo<div class="q__bar" style="--w:50%"><i></i></div></div>
+        </li>
+        <li class="q" data-reveal>
+          <div class="q__num"><strong>Q3</strong><span class="q__tier mono">Seasoned Veteran</span></div>
+          <h3>The Pick &amp; Roll</h3>
+          <p>We play together — step-by-step styling support.</p>
+          <div class="q__foot mono">We shop together<div class="q__bar" style="--w:75%"><i></i></div></div>
+        </li>
+        <li class="q" data-reveal>
+          <div class="q__num"><strong>Q4</strong><span class="q__tier mono">Hall of Famer</span></div>
+          <h3>The Give &amp; Go</h3>
+          <p>Hand it off — I'll handle everything.</p>
+          <div class="q__foot mono">Done for you<div class="q__bar" style="--w:100%"><i></i></div></div>
+        </li>
+      </ol>
+      <p class="quote-line" data-reveal>Every quarter of The Assist is designed to unlock a different level of your confidence. <span>Let's run the play.</span></p>
+    </div>
+  </section>
+
+  <section class="sec" id="plays" aria-labelledby="plays-title">
+    <div class="wrap">
+      <div class="sec__head">
+        <div>
+          <p class="eyebrow mono">Chalkboard · three packages</p>
+          <h2 id="plays-title">The plays</h2>
+        </div>
+        <p>Each package is named after a real basketball play. Press <b style="color:var(--chalk)">Run the play</b> to see how much of the court you cover, and how much Marcus does.</p>
+      </div>
+
+      <div class="plays">
+        <!-- 01 Outlet Pass -->
+        <article class="play" data-reveal>
+          <div class="play__board">
+            <svg class="court" viewBox="0 0 300 260" role="img" aria-labelledby="d1">
+              <title id="d1">Outlet pass: player 1 under the basket throws a long pass to player 2 on the wing, who runs up the court alone.</title>
+              <rect x="10" y="10" width="280" height="240"/><path class="c" d="M110 10 A40 40 0 0 0 190 10"/><rect x="105" y="150" width="90" height="100"/><path class="c" d="M105 150 A45 45 0 0 1 195 150"/><path class="c" d="M30 250 V214 A124 124 0 0 1 270 214 V250"/><line x1="132" y1="240" x2="168" y2="240"/><circle class="c" cx="150" cy="232" r="6"/>
+              <path class="pass" data-step="1" d="M150 205 Q205 170 246 120"/>
+              <path class="run" data-step="2" pathLength="1" d="M246 120 C250 90 246 60 238 28"/>
+              <path class="run" data-step="2" pathLength="1" d="M232 36 L238 26 L245 36"/>
+              <g><circle class="p" cx="150" cy="205" r="12"/><text class="pt" x="150" y="205">1</text></g>
+              <g><circle class="p" cx="246" cy="120" r="12"/><text class="pt" x="246" y="120">2</text></g>
+              <circle class="ball" r="5"><animateMotion dur=".7s" begin="indefinite" fill="freeze" path="M150 205 Q205 170 246 120" data-motion-step="1"/></circle>
+              <text class="lbl" x="18" y="26">You run with it</text>
+            </svg>
+            <button class="play__run" type="button" data-run>Run the play</button>
+            <div class="play__cap"><span>Diagram 01</span><span>Outlet pass</span></div>
+          </div>
+          <div class="play__body">
+            <span class="play__tier mono">The Rookie Deal</span>
+            <h3>The Outlet Pass</h3>
+            <p class="play__line">“I pass you the ball. You run with it.”</p>
+            <p class="play__for">Perfect for the self-motivated client who wants expert guidance but shops solo.</p>
+            <ul>
+              <li>In-person style consultation</li>
+              <li>Personalized measurement profile</li>
+              <li>Custom style plan + shopping links</li>
+            </ul>
+            <div class="play__spacer"></div>
+            <a class="btn" href="#consultation" data-prefill="Hi Marcus — I'm interested in The Outlet Pass.">Book this play</a>
+          </div>
+        </article>
+
+        <!-- 02 Pick & Roll -->
+        <article class="play" data-reveal>
+          <div class="play__board">
+            <svg class="court" viewBox="0 0 300 260" role="img" aria-labelledby="d2">
+              <title id="d2">Pick and roll: player 2 sets a screen for player 1, who dribbles around it while player 2 rolls to the basket and receives the pass.</title>
+              <rect x="10" y="10" width="280" height="240"/><path class="c" d="M110 10 A40 40 0 0 0 190 10"/><rect x="105" y="150" width="90" height="100"/><path class="c" d="M105 150 A45 45 0 0 1 195 150"/><path class="c" d="M30 250 V214 A124 124 0 0 1 270 214 V250"/><line x1="132" y1="240" x2="168" y2="240"/><circle class="c" cx="150" cy="232" r="6"/>
+              <line class="screen" data-step="1" x1="174" y1="98" x2="196" y2="110"/>
+              <path class="drib" data-step="2" pathLength="1" d="M150 74 q8 6 14 4 t14 6 t12 10 t10 14 t10 18 t8 16"/>
+              <path class="run" data-step="3" pathLength="1" d="M190 112 C182 140 170 170 160 196"/>
+              <path class="run" data-step="3" pathLength="1" d="M153 188 L159 199 L167 190"/>
+              <path class="pass" data-step="4" d="M220 145 Q200 175 163 200"/>
+              <g><circle class="p" cx="150" cy="70" r="12"/><text class="pt" x="150" y="70">1</text></g>
+              <g><circle class="p" cx="186" cy="104" r="12"/><text class="pt" x="186" y="104">2</text></g>
+              <circle class="ball" r="5"><animateMotion dur=".6s" begin="indefinite" fill="freeze" path="M220 145 Q200 175 163 200" data-motion-step="4"/></circle>
+              <text class="lbl" x="18" y="26">We play together</text>
+            </svg>
+            <button class="play__run" type="button" data-run>Run the play</button>
+            <div class="play__cap"><span>Diagram 02</span><span>Pick &amp; roll</span></div>
+          </div>
+          <div class="play__body">
+            <span class="play__tier mono">For the Seasoned Veteran</span>
+            <h3>The Pick &amp; Roll</h3>
+            <p class="play__line">“We play together — step-by-step styling support.”</p>
+            <p class="play__for">Let's work as a team, because together, we can't lose.</p>
+            <ul>
+              <li>In-person consultation</li>
+              <li>Full measurement profile</li>
+              <li>Bespoke color analysis</li>
+              <li>Live shopping sessions + style education</li>
+            </ul>
+            <div class="play__spacer"></div>
+            <a class="btn" href="#consultation" data-prefill="Hi Marcus — I'm interested in The Pick & Roll.">Book this play</a>
+          </div>
+        </article>
+
+        <!-- 03 Give & Go -->
+        <article class="play play--feature" data-reveal style="position:relative">
+          <span class="badge">Hall of Famer</span>
+          <div class="play__board">
+            <svg class="court" viewBox="0 0 300 260" role="img" aria-labelledby="d3">
+              <title id="d3">Give and go: player 1 hands the ball to player 2, cuts to the basket, and gets it right back.</title>
+              <rect x="10" y="10" width="280" height="240"/><path class="c" d="M110 10 A40 40 0 0 0 190 10"/><rect x="105" y="150" width="90" height="100"/><path class="c" d="M105 150 A45 45 0 0 1 195 150"/><path class="c" d="M30 250 V214 A124 124 0 0 1 270 214 V250"/><line x1="132" y1="240" x2="168" y2="240"/><circle class="c" cx="150" cy="232" r="6"/>
+              <path class="pass" data-step="1" d="M64 120 Q100 80 150 66"/>
+              <path class="run" data-step="2" pathLength="1" d="M64 120 C84 160 112 186 136 204"/>
+              <path class="run" data-step="2" pathLength="1" d="M127 203 L138 206 L134 195"/>
+              <path class="pass" data-step="3" d="M150 66 Q160 140 138 204"/>
+              <g><circle class="p" cx="64" cy="120" r="12"/><text class="pt" x="64" y="120">1</text></g>
+              <g><circle class="p" cx="150" cy="66" r="12"/><text class="pt" x="150" y="66">2</text></g>
+              <circle class="ball" r="5"><animateMotion dur=".6s" begin="indefinite" fill="freeze" path="M64 120 Q100 80 150 66" data-motion-step="1"/><animateMotion dur=".6s" begin="indefinite" fill="freeze" path="M150 66 Q160 140 138 204" data-motion-step="3"/></circle>
+              <text class="lbl" x="18" y="26">Hand it off</text>
+            </svg>
+            <button class="play__run" type="button" data-run>Run the play</button>
+            <div class="play__cap"><span>Diagram 03</span><span>Give &amp; go</span></div>
+          </div>
+          <div class="play__body">
+            <span class="play__tier mono">For the Hall of Famer</span>
+            <h3>The Give &amp; Go</h3>
+            <p class="play__line">“Hand it off — I'll handle everything.”</p>
+            <p class="play__for">Designed for elite professionals who value time and want a done-for-you experience.</p>
+            <ul>
+              <li>Full wardrobe plan curated &amp; delivered</li>
+              <li>Alterations, fittings, lookbooks, dry cleaning, shoe care</li>
+              <li>Bespoke color analysis + measurement profile</li>
+              <li>Multiple 1-on-1 sessions</li>
+            </ul>
+            <div class="play__spacer"></div>
+            <a class="btn" href="#consultation" data-prefill="Hi Marcus — I'm interested in The Give & Go.">Book this play</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="insert" data-reveal>
+        <img src="../assets/web/r3/shoe-shine-1600.webp" srcset="../assets/web/r3/shoe-shine-800.webp 800w, ../assets/web/r3/shoe-shine-1600.webp 1600w" sizes="(max-width:820px) 92vw, 40vw" width="1600" height="1067" loading="lazy" alt="A brush working polish into a brown leather shoe beside a sage check trouser leg">
+        <div>
+          <span class="mono">Inside the Give &amp; Go</span>
+          <h3>Right up until the final buzzer.</h3>
+          <p>From arranging your alteration sessions to picking up and dropping off your dry cleaning to getting your shoes cleaned &amp; shined and delivered to your doorstep… I'm your right hand man.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="and-ones" aria-labelledby="ones-title">
+    <div class="wrap">
+      <div class="sec__head">
+        <div>
+          <p class="eyebrow mono">Additional services offered as add-ons</p>
+          <h2 id="ones-title">And 1's</h2>
+        </div>
+        <p>Style coach, trainer and barber. The extras that round out how you show up.</p>
+      </div>
+      <div class="ones">
+        <article class="one" data-reveal>
+          <span class="one__n" aria-hidden="true">+1</span>
+          <h3>Haircut and/or beard trim</h3>
+          <p>Using my decades-long experience as a skilled barber, together we will figure out the cut and style that works perfectly for your head shape, hair type, career/relationship goals, and lifestyle.</p>
+          <span class="one__foot mono">The barber</span>
+        </article>
+        <article class="one" data-reveal>
+          <span class="one__n" aria-hidden="true">+1</span>
+          <h3>Workout &amp; weight training</h3>
+          <p>Let's head to a local gym, where we will do a workout together, tailored to your fitness level and goals: muscle, shape, eating properly, and mental &amp; emotional health.</p>
+          <span class="one__foot mono">The trainer</span>
+        </article>
+        <article class="one" data-reveal>
+          <span class="one__n" aria-hidden="true">+1</span>
+          <h3>Public speaking &amp; presence</h3>
+          <p>An upcoming presentation causing some anxiety? As an experienced public speaker and business professional, I'll guide you in preparing your speech and delivering it with poise &amp; confidence.</p>
+          <span class="one__foot mono">The speaker</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="coach" aria-labelledby="coach-title">
+    <div class="wrap coach">
+      <figure class="coach__photo" style="margin:0" data-reveal>
+        <img src="../assets/web/r3/city-1600.webp" srcset="../assets/web/r3/city-800.webp 600w, ../assets/web/r3/city-1600.webp 1200w" sizes="(max-width:820px) 92vw, 36vw" width="1200" height="1600" loading="lazy" alt="Marcus Ervin in a navy suit standing in the middle of a city street between tall buildings">
+        <figcaption class="mono"><span>Marcus Ervin</span><span style="color:var(--orange-ink)">The coach</span></figcaption>
+      </figure>
+      <div>
+        <p class="eyebrow mono">Your style coach</p>
+        <h2 id="coach-title">Think of me as your style coach, trainer, and barber — all in one.</h2>
+        <blockquote class="mirror">
+          <p>“When you see it, you will begin to believe it. And when you believe it, inevitably so will others!”</p>
+          <cite>— Marcus Ervin</cite>
+        </blockquote>
+        <div class="coach__story">
+          <p>From a young age, like many of us, I battled with the occasional self-confidence issues and insecurities. As I grew older, I began to realize that my style and clothing gave me a great head start in feeling better about myself and my image.</p>
+        </div>
+        <details class="more">
+          <summary>Read Marcus's story</summary>
+          <div class="coach__story">
+            <p>The more I began to learn about permanent fashion and style, the more I realized the power of, first, projecting confidence to <em>myself</em>…and then that confidence would become evident to others.</p>
+            <p>I have read many books and taken hours upon hours of instructional classes to educate myself and build up a wealth of knowledge to assist you. As a huge basketball fan and a lover of some of the game's premier point guards, my aim is similar: to pass you the ball and facilitate your success.</p>
+          </div>
+        </details>
+        <a class="btn" href="#consultation">Book a consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="motion-title">
+    <div class="wrap">
+      <h2 id="motion-title" class="mono" style="font:700 12px var(--mono);letter-spacing:.14em;margin:0 0 14px;color:var(--hardwood)">The Assist, in motion</h2>
+      <div class="jumbo" data-motion>
+        <div class="jumbo__bar mono"><span><b>●</b> Jumbotron</span><span>6 sec · no sound</span></div>
+        <div class="jumbo__screen">
+          <video muted playsinline preload="metadata" aria-label="A suited man bounces a basketball from hand to hand above the words The Assist"><source src="../assets/animation/the-assist-dribble.mp4" type="video/mp4"></video>
+          <img data-still src="../assets/animation/dribble-final.png" alt="The Assist logo: a suited man holding a basketball" loading="lazy">
+        </div>
+        <div class="jumbo__ctrl">
+          <p role="status" aria-live="polite" data-motion-status>Style, confidence, and a little rhythm.</p>
+          <div class="btns"><button type="button" data-motion-pause hidden>Pause</button><button type="button" data-motion-replay>Replay</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="consultation" aria-labelledby="book-title" style="border-bottom:0">
+    <div class="wrap">
+      <div class="ticket" data-reveal>
+        <div class="stub">
+          <span class="mono">Admit one</span>
+          <strong>Your<br>seat</strong>
+          <dl>
+            <dt>Event</dt><dd>Consultation</dd>
+            <dt>With</dt><dd>Marcus Ervin</dd>
+            <dt>Format</dt><dd>In person</dd>
+          </dl>
+        </div>
+        <form data-demo-form novalidate>
+          <h2 id="book-title">Book a consultation</h2>
+          <p class="intro">Let's connect! Fill out your info below and tell Marcus what you're working toward: a new role, a big event, or simply feeling like yourself again.</p>
+          <div class="fields">
+            <div class="field"><label for="f-first">First name</label><input id="f-first" name="first" autocomplete="given-name" required></div>
+            <div class="field"><label for="f-last">Last name</label><input id="f-last" name="last" autocomplete="family-name" required></div>
+            <div class="field field--full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field field--full"><label for="f-msg">Message</label><textarea id="f-msg" name="message"></textarea></div>
+          </div>
+          <div class="ticket__foot">
+            <span class="barcode mono"><i aria-hidden="true"></i>Demo · not sent</span>
+            <button class="btn" type="submit">Send</button>
+            <p class="status" role="status" aria-live="polite" data-form-status></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__row">
+      <a class="brand" href="#top">THE <b>ASSIST</b></a>
+      <ul aria-label="Follow Marcus">
+        <li><a href="https://www.instagram.com/themarcuservin" rel="noopener" target="_blank">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/marcuservin/" rel="noopener" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.tiktok.com/@themarcuservin" rel="noopener" target="_blank">TikTok</a></li>
+        <li><a href="https://www.youtube.com/@TheMarcusErvin" rel="noopener" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+    <p class="foot__note"><span>© <span data-year>2026</span> by THE ASSIST. All rights reserved.</span><span>Design demo 07, Four Quarters. Headline adapted from Marcus's own wording. Booking is not connected yet.</span></p>
+  </div>
+</footer>
+
+<script src="round-three.js" defer></script>
+<script>
+// Chalkboard plays: reveal each [data-step] in order and move the ball along pass paths.
+(() => {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const boards = document.querySelectorAll('.play__board');
+  const run = (board) => {
+    const svg = board.querySelector('svg');
+    const steps = [...svg.querySelectorAll('[data-step]')];
+    const motions = [...svg.querySelectorAll('[data-motion-step]')];
+    steps.forEach((s) => s.classList.remove('on'));
+    clearTimeout(board._t1); (board._ts || []).forEach(clearTimeout);
+    svg.classList.add('running');
+    if (reduced) { steps.forEach((s) => s.classList.add('on')); svg.classList.remove('running'); return; }
+    const max = Math.max(...steps.map((s) => +s.dataset.step));
+    board._ts = [];
+    for (let n = 1; n <= max; n++) {
+      board._ts.push(setTimeout(() => {
+        steps.filter((s) => +s.dataset.step === n).forEach((s) => s.classList.add('on'));
+        motions.filter((m) => +m.dataset.motionStep === n).forEach((m) => { try { m.beginElement(); } catch {} });
+      }, 250 + (n - 1) * 800));
+    }
+  };
+  boards.forEach((b) => b.querySelector('[data-run]').addEventListener('click', () => run(b)));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } }), { threshold: .55 });
+    boards.forEach((b) => io.observe(b));
+  } else boards.forEach(run);
+
+  // Ticker scrollspy
+  const links = [...document.querySelectorAll('[data-spy]')];
+  const targets = links.map((a) => document.getElementById(a.dataset.spy)).filter(Boolean);
+  const mark = () => {
+    const y = innerHeight * 0.35;
+    let cur = targets[0];
+    targets.forEach((t) => { if (t.getBoundingClientRect().top <= y) cur = t; });
+    links.forEach((a) => { const live = a.dataset.spy === cur.id; a.classList.toggle('is-live', live); live ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current'); });
+  };
+  addEventListener('scroll', mark, { passive: true }); mark();
+})();
+</script>
+</body>
+</html>

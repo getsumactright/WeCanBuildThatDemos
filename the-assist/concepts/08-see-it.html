@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Assist — See It. Believe It.</title>
+<meta name="description" content="Personal styling for professional men with Marcus Ervin. When you see it, you will begin to believe it. Book a consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Gloock&display=swap" rel="stylesheet">
+<style>
+:root{
+  --aub:#24122b; --aub-2:#2e1838; --plum:#4a2a55; --plum-2:#5a3767;
+  --lilac:#e7ddeb; --lilac-2:#f3edf5; --brass:#c79a4b; --brass-hi:#e2bd78; --brass-ink:#7a5718;
+  --porcelain:#fbf8f4; --porcelain-dim:rgba(251,248,244,.74); --graphite:#2b2530; --graphite-dim:#5b5060;
+  --line:rgba(199,154,75,.28); --line-light:rgba(43,37,48,.16);
+  --serif:'Gloock','Didot','Bodoni 72',Georgia,serif;
+  --sans:'Figtree',system-ui,sans-serif;
+  --pad:clamp(16px,4vw,64px); --max:1320px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--aub);color:var(--porcelain);font:400 17.5px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass-hi);outline-offset:4px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.label{font:600 12px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--brass);color:var(--aub);padding:12px 16px;z-index:100;border-radius:99px}
+.skip:focus{left:8px}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.06;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 26px;border-radius:999px;font:600 15px/1 var(--sans);letter-spacing:.02em;text-decoration:none;background:var(--brass);color:var(--aub);border:1px solid var(--brass);transition:box-shadow .3s,background .3s,transform .3s}
+.btn:hover{background:var(--brass-hi)}
+.btn--ghost{background:transparent;color:var(--porcelain);border-color:var(--line)}
+.btn--ghost:hover{background:rgba(199,154,75,.12)}
+.link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font:600 14px var(--sans);letter-spacing:.06em;text-decoration:none;border-bottom:1px solid var(--line)}
+.link:hover{border-color:var(--brass)}
+
+/* header */
+.top{position:sticky;top:0;z-index:50;background:rgba(36,18,43,.86);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top.scrolled{border-color:var(--line)}
+.top__row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:76px;gap:16px}
+.nav{display:flex;gap:6px}
+.nav a{font:500 14px var(--sans);text-decoration:none;color:var(--porcelain-dim);padding:12px 10px;border-radius:99px}
+.nav a:hover{color:var(--porcelain)}
+.brand{font:400 21px/1 var(--serif);letter-spacing:.32em;text-decoration:none;text-align:center;padding:12px 0 12px .32em;display:inline-block}
+.top__cta{justify-self:end}
+.top__cta .btn{min-height:44px;padding:10px 20px;font-size:14px}
+.menu-btn{display:none;justify-self:start;min-height:44px;padding:0 18px;border-radius:99px;background:transparent;border:1px solid var(--line);color:var(--porcelain);font:600 14px var(--sans)}
+
+/* hero */
+.hero{position:relative;padding:clamp(28px,4vw,56px) 0 clamp(56px,7vw,100px);overflow:hidden}
+.hero::before{content:"";position:absolute;left:50%;top:44%;width:min(1100px,140vw);aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(90,55,103,.9),rgba(36,18,43,0) 70%);pointer-events:none}
+.hero__grid{position:relative;display:grid;grid-template-columns:1fr minmax(240px,330px) 1fr;align-items:center;gap:clamp(20px,3.5vw,56px)}
+.side .word{font:400 clamp(56px,6.6vw,112px)/.92 var(--serif);letter-spacing:-.02em;margin:0;max-width:none;color:var(--porcelain);white-space:nowrap}
+.word em{font-style:normal;color:var(--brass-hi)}
+.side{display:flex;flex-direction:column;gap:14px}
+.side--l{align-items:flex-end;text-align:right}
+.side p{margin:0;max-width:24ch;color:var(--porcelain-dim);font-size:16px}
+.arch{position:relative;border-radius:999px 999px 6px 6px;padding:10px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(199,154,75,.12),rgba(199,154,75,0))}
+.arch__glass{position:relative;border-radius:999px 999px 2px 2px;overflow:hidden;aspect-ratio:3/4.1;background:var(--plum)}
+.arch__glass img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.arch__glass::after{content:"";position:absolute;inset:-20%;background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.22) 48%,rgba(255,255,255,.06) 54%,transparent 62%);transform:translateX(var(--sheen,-60%));transition:transform .9s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.arch__base{display:flex;justify-content:center;padding:12px 0 2px}
+.hero__under{position:relative;text-align:center;margin-top:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;align-items:center;gap:22px}
+.hero__under h1{font:400 clamp(20px,1.8vw,26px)/1.35 var(--serif);margin:0;max-width:30ch}
+.hero__cta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 26px}
+
+/* sections */
+.sec{padding:clamp(72px,10vw,140px) 0}
+.sec__head{text-align:center;max-width:760px;margin:0 auto clamp(40px,6vw,72px)}
+.sec h2{font:400 clamp(40px,5.4vw,80px)/1 var(--serif);letter-spacing:-.015em;margin:14px 0 18px}
+.sec__head p{margin:0 auto;max-width:56ch;color:var(--porcelain-dim)}
+
+/* mirror sequence */
+.seq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,96px)}
+.seq__mirror{position:sticky;top:110px;align-self:start}
+.seq__mirror .arch__glass{aspect-ratio:3/4}
+.seq__mirror img{position:absolute;inset:0;opacity:0;transition:opacity .9s ease,transform 1.4s ease;transform:scale(1.04)}
+.seq__mirror img.is-on{opacity:1;transform:none}
+.seq__count{display:flex;justify-content:space-between;align-items:center;margin-top:14px;color:var(--porcelain-dim);font-size:14px}
+.seq__dots{display:flex;gap:8px}
+.seq__dots i{width:28px;height:2px;background:var(--line);transition:background .4s}
+.seq__dots i.is-on{background:var(--brass)}
+.steps{list-style:none;margin:0;padding:0}
+.step{min-height:70vh;display:flex;flex-direction:column;justify-content:center;gap:16px;border-top:1px solid var(--line);padding:40px 0;opacity:.38;transition:opacity .6s}
+.step:first-child{border-top:0}
+.step.is-on{opacity:1}
+.no-js .step,.step:only-child{opacity:1}
+.step h3{font:400 clamp(36px,4.4vw,66px)/1.02 var(--serif);margin:0;letter-spacing:-.015em}
+.step h3 em{font-style:normal;color:var(--brass-hi)}
+.step p{margin:0;max-width:46ch;color:var(--porcelain-dim);font-size:18px}
+.step__img{display:none}
+
+/* compare */
+.light{background:var(--lilac);color:var(--graphite)}
+.light .label{color:var(--brass-ink)}
+.light .sec__head p{color:var(--graphite-dim)}
+.compare{background:var(--porcelain);border-radius:28px;padding:clamp(12px,2vw,24px);box-shadow:0 30px 60px -30px rgba(36,18,43,.35)}
+.tabs{display:none}
+table{width:100%;border-collapse:collapse}
+th,td{padding:16px 18px;text-align:center;border-bottom:1px solid var(--line-light);vertical-align:middle}
+thead th{vertical-align:bottom;padding-top:22px;padding-bottom:22px}
+thead th:first-child,tbody th{text-align:left}
+tbody th{font:500 16px var(--sans)}
+.pkg-tier{display:block;font:600 11.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--brass-ink);margin-bottom:6px}
+.pkg-name{display:block;font:400 clamp(24px,2.2vw,32px)/1.05 var(--serif)}
+.pkg-line{display:block;font:italic 400 14.5px/1.4 var(--sans);color:var(--graphite-dim);margin-top:8px}
+col.feature{background:var(--lilac-2)}
+.yes{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--aub);color:var(--brass-hi);font-size:15px}
+.no{color:#6f6676;font-size:20px}
+tfoot td{border-bottom:0;padding-top:22px}
+tfoot .btn{min-height:46px;padding:10px 18px;font-size:14px}
+tfoot .btn--line{background:transparent;color:var(--graphite);border-color:rgba(43,37,48,.3)}
+tfoot .btn--line:hover{background:var(--lilac)}
+.compare__note{margin:18px 6px 0;font-size:14.5px;color:var(--graphite-dim);text-align:center}
+
+/* and ones */
+.ones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:clamp(48px,6vw,80px)}
+.one{background:var(--porcelain);border-radius:24px;padding:30px 28px;display:flex;flex-direction:column;gap:12px}
+.one__n{font:400 46px/1 var(--serif);color:var(--brass-ink)}
+.one h3{font:400 25px/1.15 var(--serif);margin:0}
+.one p{margin:0;color:var(--graphite-dim);font-size:16px}
+.ones__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px}
+.ones__head h3{font:400 clamp(32px,3.6vw,52px)/1 var(--serif);margin:8px 0 0}
+.ones__head p{margin:0;color:var(--graphite-dim);max-width:40ch}
+
+/* marcus */
+.marcus{background:var(--plum)}
+.marcus__grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:clamp(32px,6vw,96px);align-items:center}
+.marcus .arch__glass{aspect-ratio:4/5}
+.marcus .arch__glass img{object-position:50% 30%}
+.marcus h2{font:400 clamp(40px,5vw,72px)/1 var(--serif);margin:14px 0 24px}
+.marcus blockquote{margin:0 0 26px;padding:0 0 0 24px;border-left:1px solid var(--brass);font:400 clamp(22px,2vw,28px)/1.35 var(--serif)}
+.marcus__story p{margin:0 0 16px;color:var(--porcelain-dim);max-width:60ch}
+.marcus__sign{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.marcus__sign strong{font:400 26px var(--serif);display:block}
+.marcus__sign span{font-size:14px;color:var(--porcelain-dim)}
+
+/* motion */
+.motion{max-width:980px;margin:0 auto;border-radius:28px;border:1px solid var(--line);background:#0e0710;padding:14px;overflow:hidden}
+.motion__screen{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000}
+.motion__screen video,.motion__screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.motion__screen video{mix-blend-mode:screen}
+.motion__screen::after{content:"";position:absolute;inset:0;background:radial-gradient(closest-side,transparent 55%,rgba(36,18,43,.6));pointer-events:none}
+.is-playing .motion__screen img{visibility:hidden}
+.motion__bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:14px 8px 4px}
+.motion__bar p{margin:0;font-size:14.5px;color:var(--porcelain-dim)}
+.motion__bar .btns{display:flex;gap:8px}
+.motion__bar button{min-height:44px;padding:8px 18px;border-radius:99px;background:transparent;border:1px solid var(--line);color:var(--porcelain);font:600 14px var(--sans);cursor:pointer}
+.motion__bar button:hover{border-color:var(--brass)}
+[hidden]{display:none!important}
+
+/* consult */
+.consult{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,80px);align-items:center}
+.consult h2{font:400 clamp(44px,5.6vw,84px)/.98 var(--serif);margin:14px 0 20px}
+.consult__lede{color:var(--porcelain-dim);max-width:40ch;margin:0 0 24px}
+.consult ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.consult li{display:flex;gap:12px;align-items:baseline;color:var(--porcelain-dim)}
+.consult li::before{content:"";flex:0 0 8px;height:8px;border-radius:50%;background:var(--brass);transform:translateY(-2px)}
+.card{background:var(--porcelain);color:var(--graphite);border-radius:28px;padding:clamp(24px,4vw,44px);box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.card h3{font:400 30px/1.1 var(--serif);margin:0 0 6px}
+.card > p{margin:0 0 24px;color:var(--graphite-dim);font-size:16px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field--full{grid-column:1/-1}
+.field label{font:600 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--graphite-dim)}
+.field input,.field textarea{font:400 17px/1.4 var(--sans);color:var(--graphite);background:#fff;border:1px solid rgba(43,37,48,.22);border-radius:14px;padding:12px 16px;min-height:50px;transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--brass);box-shadow:0 0 0 4px rgba(199,154,75,.22)}
+.field [aria-invalid="true"]{border-color:#a8261e}
+.card .btn{width:100%;margin-top:20px}
+.status{margin:14px 0 0;min-height:1.5em;font-size:15px;color:var(--graphite-dim);text-align:center}
+
+footer{border-top:1px solid var(--line);padding:44px 0 36px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.foot .brand{font-size:24px}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.foot ul a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:99px;font:500 14px var(--sans);text-decoration:none;color:var(--porcelain-dim)}
+.foot ul a:hover{color:var(--porcelain);border-color:var(--brass)}
+.foot__note{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:28px;font-size:14px;color:var(--porcelain-dim)}
+
+.js [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js [data-reveal]{opacity:1;transform:none;transition:none}.seq__mirror img{transition:none}.arch__glass::after{display:none}}
+
+@media (max-width:1040px){
+  .top__row{grid-template-columns:auto 1fr auto}
+  .menu-btn{display:inline-flex;align-items:center}
+  .nav{display:none}
+  .nav[data-open="true"]{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;background:var(--aub);border-bottom:1px solid var(--line);padding:8px var(--pad) 22px}
+  .nav[data-open="true"] a{padding:14px 4px;font-size:17px;border-bottom:1px solid var(--line);border-radius:0;color:var(--porcelain)}
+  .brand{grid-column:2}
+  .hero__grid{grid-template-columns:1fr minmax(220px,320px) 1fr}
+}
+@media (max-width:820px){
+  .hero__grid{grid-template-columns:1fr;justify-items:center;gap:20px}
+  .side,.side--l{align-items:center;text-align:center}
+  .side--l{order:-1}
+  .side .word{font-size:clamp(54px,16vw,92px)}
+  .hero .arch{width:min(300px,78vw)}
+  .side p:not(.word){display:none}
+  .seq{grid-template-columns:1fr}
+  .seq__mirror{display:none}
+  .step{min-height:0;opacity:1;padding:36px 0}
+  .step__img{display:block;width:min(320px,80%);border-radius:999px 999px 4px 4px;aspect-ratio:3/4;object-fit:cover;margin-bottom:8px}
+  .marcus__grid,.consult{grid-template-columns:1fr}
+  .marcus .arch{max-width:360px}
+  .ones{grid-template-columns:1fr}
+  /* compare → package switcher */
+  .tabs{display:flex;gap:6px;background:var(--lilac);border-radius:99px;padding:5px;margin-bottom:12px}
+  .tabs button{flex:1;min-height:44px;border:0;border-radius:99px;background:transparent;font:600 14px var(--sans);color:var(--graphite);cursor:pointer;padding:6px 8px}
+  .tabs button[aria-selected="true"]{background:var(--aub);color:var(--porcelain)}
+  col.feature{background:none}
+  .js table [data-col]{display:none}
+  .js table [data-col].is-col{display:table-cell}
+  th,td{padding:14px 10px}
+  thead th:first-child{display:none}
+  .js thead th[data-col].is-col{text-align:left}
+}
+@media (max-width:560px){
+  body{font-size:16.5px}
+  .fields{grid-template-columns:1fr}
+  .top__cta .btn{padding:10px 14px;font-size:13.5px}
+  .brand{font-size:17px;letter-spacing:.24em}
+}
+</style>
+<meta name="robots" content="noindex,nofollow"></head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top" id="top-bar">
+  <div class="wrap top__row">
+    <button class="menu-btn" data-nav-toggle aria-controls="site-nav" aria-expanded="false">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="#mirror">The mirror</a>
+      <a href="#services">Services</a>
+      <a href="#marcus">Meet Marcus</a>
+    </nav>
+    <a class="brand" href="#main" aria-label="The Assist — home">THE ASSIST</a>
+    <div class="top__cta"><a class="btn" href="#consultation">Book a consultation</a></div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero__grid">
+        <div class="side side--l">
+          <span class="label">When you see it</span>
+          <p class="word" aria-hidden="true">See it.</p>
+          <p>Style is the head start. The mirror is where confidence begins.</p>
+        </div>
+        <div class="arch" data-sheen>
+          <div class="arch__glass">
+            <img src="../assets/web/r3/sage-1600.webp" srcset="../assets/web/r3/sage-800.webp 569w, ../assets/web/r3/sage-1600.webp 1016w" sizes="(max-width:820px) 78vw, 400px" width="1016" height="1429" alt="Marcus Ervin in a sage double-breasted check suit and white turtleneck" fetchpriority="high">
+          </div>
+          <div class="arch__base"><span class="label">Marcus Ervin</span></div>
+        </div>
+        <div class="side">
+          <span class="label">You will begin to believe it</span>
+          <p class="word" aria-hidden="true"><em>Believe</em> it.</p>
+          <p>And when you believe it, inevitably so will others.</p>
+        </div>
+      </div>
+      <div class="hero__under">
+        <h1 id="hero-title">Personal styling for professional men, with Marcus Ervin.</h1>
+        <div class="hero__cta">
+          <a class="btn" href="#consultation">Book a consultation</a>
+          <a class="link" href="#mirror">How it works <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="mirror" aria-labelledby="mirror-title" style="padding-top:clamp(40px,6vw,80px)">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="label">The brand promise</span>
+        <h2 id="mirror-title">I help professional gentlemen increase self confidence.</h2>
+        <p>By improving your style &amp; teaching you essential fashion principles. Marcus's purpose is to make you see the best version of yourself when you look in the mirror.</p>
+      </div>
+      <div class="seq">
+        <div class="seq__mirror" aria-hidden="true">
+          <div class="arch">
+            <div class="arch__glass">
+              <img class="is-on" src="../assets/web/r3/city-1600.webp" alt="" loading="lazy">
+              <img src="../assets/web/r3/yellow-wall-1600.webp" alt="" loading="lazy">
+              <img src="../assets/web/r3/black-suit-1600.webp" alt="" loading="lazy" style="object-position:40% 30%">
+            </div>
+          </div>
+          <div class="seq__count"><span data-seq-num>01 / 03</span><span class="seq__dots"><i class="is-on"></i><i></i><i></i></span></div>
+        </div>
+        <ol class="steps">
+          <li class="step is-on" data-step-i="0">
+            <img class="step__img" src="../assets/web/r3/city-800.webp" alt="Marcus Ervin in a navy suit standing in the middle of a city street" loading="lazy" width="600" height="800">
+            <span class="label">01 · See it</span>
+            <h3>When you <em>see</em> it…</h3>
+            <p>It starts in front of the mirror. As I grew older, I began to realize that my style and clothing gave me a great head start in feeling better about myself and my image.</p>
+          </li>
+          <li class="step" data-step-i="1">
+            <img class="step__img" src="../assets/web/r3/yellow-wall-800.webp" alt="Marcus in a bright yellow turtleneck and check trousers against a graffiti wall" loading="lazy" width="576" height="800">
+            <span class="label">02 · Believe it</span>
+            <h3>…you will begin to <em>believe</em> it.</h3>
+            <p>The more I learned about permanent fashion and style, the more I realized the power of, first, projecting confidence to <em>myself</em>.</p>
+          </li>
+          <li class="step" data-step-i="2">
+            <img class="step__img" src="../assets/web/r3/black-suit-800.webp" alt="Marcus in a black suit and green tie fastening his jacket" loading="lazy" width="800" height="581">
+            <span class="label">03 · So will others</span>
+            <h3>And when you believe it, <em>so will others.</em></h3>
+            <p>…and then that confidence would become evident to others. That is what has motivated me to share what I have learned with you.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec light" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="label">The Assist service packages</span>
+        <h2 id="services-title">Choose how much I carry.</h2>
+        <p>Unlock your full potential with a fresh look, elite grooming, and a winning mindset. Every package begins with an in-person consultation.</p>
+      </div>
+
+      <div class="compare" data-reveal>
+        <div class="tabs" role="tablist" aria-label="Choose a package">
+          <button role="tab" type="button" data-pick="1" aria-selected="false">Outlet Pass</button>
+          <button role="tab" type="button" data-pick="2" aria-selected="true">Pick &amp; Roll</button>
+          <button role="tab" type="button" data-pick="3" aria-selected="false">Give &amp; Go</button>
+        </div>
+        <table>
+          <caption class="label" style="caption-side:top;text-align:left;padding:6px 18px 0">What each package includes</caption>
+          <colgroup><col><col><col class="feature"><col></colgroup>
+          <thead>
+            <tr>
+              <th scope="col"><span class="pkg-tier" style="color:var(--graphite-dim)">Included</span></th>
+              <th scope="col" data-col="1"><span class="pkg-tier">The Rookie Deal</span><span class="pkg-name">The Outlet Pass</span><span class="pkg-line">I pass you the ball. You run with it.</span></th>
+              <th scope="col" data-col="2"><span class="pkg-tier">For the Seasoned Veteran</span><span class="pkg-name">The Pick &amp; Roll</span><span class="pkg-line">We play together — step-by-step styling support.</span></th>
+              <th scope="col" data-col="3"><span class="pkg-tier">For the Hall of Famer</span><span class="pkg-name">The Give &amp; Go</span><span class="pkg-line">Hand it off — I'll handle everything.</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">In-person style consultation</th><td data-col="1"><span class="yes" role="img" aria-label="Included">✓</span></td><td data-col="2"><span class="yes" role="img" aria-label="Included">✓</span></td><td data-col="3"><span class="yes" role="img" aria-label="Included">✓</span></td></tr>
+            <tr><th scope="row">Personalized measurement profile</th><td data-col="1"><span class="yes" role="img" aria-label="Included">✓</span></td><td data-col="2"><span class="yes" role="img" aria-label="Included">✓</span></td><td data-col="3"><span class="yes" role="img" aria-label="Included">✓</span></td></tr>
+            <tr><th scope="row">Custom style plan + shopping links</th><td data-col="1"><span class="yes" role="img" aria-label="Included">✓</span></td><td data-col="2"><span class="no" role="img" aria-label="Not listed">–</span></td><td data-col="3"><span class="no" role="img" aria-label="Not listed">–</span></td></tr>
+            <tr><th scope="row">Bespoke color analysis</th><td data-col="1"><span class="no" role="img" aria-label="Not included">–</span></td><td data-col="2"><span class="yes" role="img" aria-label="Included">✓</span></td><td data-col="3"><span class="yes" role="img" aria-label="Included">✓</span></td></tr>
+            <tr><th scope="row">Live shopping sessions + style education</th><td data-col="1"><span class="no" role="img" aria-label="Not included">–</span></td><td data-col="2"><span class="yes" role="img" aria-label="Included">✓</span></td><td data-col="3"><span class="no" role="img" aria-label="Not listed">–</span></td></tr>
+            <tr><th scope="row">Full wardrobe plan curated &amp; delivered</th><td data-col="1"><span class="no" role="img" aria-label="Not included">–</span></td><td data-col="2"><span class="no" role="img" aria-label="Not included">–</span></td><td data-col="3"><span class="yes" role="img" aria-label="Included">✓</span></td></tr>
+            <tr><th scope="row">Alterations, fittings, dry cleaning &amp; shoe care</th><td data-col="1"><span class="no" role="img" aria-label="Not included">–</span></td><td data-col="2"><span class="no" role="img" aria-label="Not included">–</span></td><td data-col="3"><span class="yes" role="img" aria-label="Included">✓</span></td></tr>
+            <tr><th scope="row">Personal lookbook + multiple 1-on-1 fittings</th><td data-col="1"><span class="no" role="img" aria-label="Not included">–</span></td><td data-col="2"><span class="no" role="img" aria-label="Not included">–</span></td><td data-col="3"><span class="yes" role="img" aria-label="Included">✓</span></td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td></td>
+              <td data-col="1"><a class="btn btn--line" href="#consultation" data-prefill="Hi Marcus — I'd like to start with The Outlet Pass.">Start here</a></td>
+              <td data-col="2"><a class="btn" href="#consultation" data-prefill="Hi Marcus — I'd like to start with The Pick & Roll.">Start here</a></td>
+              <td data-col="3"><a class="btn btn--line" href="#consultation" data-prefill="Hi Marcus — I'd like to start with The Give & Go.">Start here</a></td>
+            </tr>
+          </tfoot>
+        </table>
+        <p class="compare__note">Not sure which? Book a consultation and decide together.</p>
+      </div>
+
+      <div class="ones__head" style="margin-top:clamp(64px,8vw,110px)">
+        <div><span class="label">Additional services I offer as add-ons</span><h3>The And 1's</h3></div>
+        <p>Your style coach, trainer, and barber — all in one.</p>
+      </div>
+      <div class="ones" style="margin-top:28px">
+        <article class="one" data-reveal><span class="one__n">i.</span><h3>Haircut and/or beard trim</h3><p>Using my decades-long experience as a skilled barber, we'll find the cut and style that works for your head shape, hair type, goals and lifestyle.</p></article>
+        <article class="one" data-reveal><span class="one__n">ii.</span><h3>Workout &amp; weight training</h3><p>A workout together at a local gym, tailored to your fitness level and goals, with tips that helped me grow muscle, eat properly and improve my mental &amp; emotional health.</p></article>
+        <article class="one" data-reveal><span class="one__n">iii.</span><h3>Public speaking &amp; presence</h3><p>An upcoming presentation causing anxiety? I'll guide you in preparing your speech and delivering it in a way that displays poise &amp; confidence.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec marcus" id="marcus" aria-labelledby="marcus-title">
+    <div class="wrap marcus__grid">
+      <div class="arch" data-reveal>
+        <div class="arch__glass"><img src="../assets/web/r3/cream-bw-1600.webp" srcset="../assets/web/r3/cream-bw-800.webp 800w, ../assets/web/r3/cream-bw-1600.webp 1440w" sizes="(max-width:820px) 80vw, 36vw" width="1440" height="1440" loading="lazy" alt="Black-and-white portrait of Marcus Ervin in a cream jacket in front of a shop window"></div>
+      </div>
+      <div>
+        <span class="label">Meet Marcus Ervin</span>
+        <h2 id="marcus-title">Your style coach, trainer, and barber — all in one.</h2>
+        <blockquote>“My purpose is to make you see the best version of yourself when you look in the mirror.”</blockquote>
+        <div class="marcus__story">
+          <p>From a young age, like many of us, I battled with the occasional self-confidence issues and insecurities. I have read many books and taken hours upon hours of instructional classes to build up a wealth of knowledge to assist you.</p>
+          <p>As a huge basketball fan and a lover of some of the game's premier point guards, my aim is similar: to pass you the ball and facilitate your success.</p>
+        </div>
+        <div class="marcus__sign">
+          <div><strong>Marcus Ervin</strong><span>Founder, The Assist · image consultant</span></div>
+          <a class="btn" href="#consultation">Book a consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="motion-title" style="padding-bottom:clamp(40px,5vw,72px)">
+    <div class="wrap">
+      <div class="sec__head" style="margin-bottom:32px">
+        <span class="label">A little rhythm</span>
+        <h2 id="motion-title" style="font-size:clamp(32px,3.6vw,52px)">The Assist, in motion</h2>
+      </div>
+      <div class="motion" data-motion data-reveal>
+        <div class="motion__screen">
+          <video muted playsinline preload="metadata" aria-label="A suited man bounces a basketball from hand to hand above the words The Assist"><source src="../assets/animation/the-assist-dribble.mp4" type="video/mp4"></video>
+          <img data-still src="../assets/animation/dribble-final.png" alt="The Assist logo: a suited man holding a basketball" loading="lazy">
+        </div>
+        <div class="motion__bar">
+          <p role="status" aria-live="polite" data-motion-status>Style, confidence, and a little rhythm.</p>
+          <div class="btns"><button type="button" data-motion-pause hidden>Pause</button><button type="button" data-motion-replay>Replay</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="consultation" aria-labelledby="book-title">
+    <div class="wrap consult">
+      <div>
+        <span class="label">Your first step</span>
+        <h2 id="book-title">Begin at the mirror.</h2>
+        <p class="consult__lede">Book a consultation: an opportunity for me to get to know you as a person &amp; learn what your specific needs and wants are.</p>
+        <ul>
+          <li>In person, one-on-one with Marcus</li>
+          <li>Every package starts here</li>
+          <li>Add-ons: grooming, training and presence coaching</li>
+        </ul>
+      </div>
+      <form class="card" data-demo-form novalidate data-reveal>
+        <h3>Let's connect</h3>
+        <p>Fill out your info below and Marcus will be in touch.</p>
+        <div class="fields">
+          <div class="field"><label for="f-first">First name</label><input id="f-first" name="first" autocomplete="given-name" required></div>
+          <div class="field"><label for="f-last">Last name</label><input id="f-last" name="last" autocomplete="family-name" required></div>
+          <div class="field field--full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field field--full"><label for="f-msg">Message</label><textarea id="f-msg" name="message"></textarea></div>
+        </div>
+        <button class="btn" type="submit">Send</button>
+        <p class="status" role="status" aria-live="polite" data-form-status>Design demo. Nothing is sent yet.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="#main">THE ASSIST</a>
+      <ul aria-label="Follow Marcus">
+        <li><a href="https://www.instagram.com/themarcuservin" rel="noopener" target="_blank">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/marcuservin/" rel="noopener" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.tiktok.com/@themarcuservin" rel="noopener" target="_blank">TikTok</a></li>
+        <li><a href="https://www.youtube.com/@TheMarcusErvin" rel="noopener" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+    <p class="foot__note"><span>© <span data-year>2026</span> by THE ASSIST. All rights reserved.</span><span>Design demo 08, See It. Believe It. Headlines built from Marcus's own words. Booking is not connected yet.</span></p>
+  </div>
+</footer>
+
+<script src="round-three.js" defer></script>
+<script>
+(() => {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // header hairline once scrolled
+  const bar = document.getElementById('top-bar');
+  addEventListener('scroll', () => bar.classList.toggle('scrolled', scrollY > 8), { passive: true });
+
+  // mirror sheen follows the pointer across the hero arch
+  const arch = document.querySelector('[data-sheen] .arch__glass');
+  if (arch && !reduced && matchMedia('(hover:hover)').matches) {
+    arch.parentElement.addEventListener('pointermove', (e) => {
+      const r = arch.getBoundingClientRect();
+      arch.style.setProperty('--sheen', `${((e.clientX - r.left) / r.width - 0.5) * 120}%`);
+    });
+    arch.parentElement.addEventListener('pointerleave', () => arch.style.setProperty('--sheen', '-60%'));
+  }
+
+  // sticky mirror: swap the reflection as each step reaches the middle of the screen
+  const steps = [...document.querySelectorAll('[data-step-i]')];
+  const imgs = [...document.querySelectorAll('.seq__mirror img')];
+  const dots = [...document.querySelectorAll('.seq__dots i')];
+  const num = document.querySelector('[data-seq-num]');
+  const show = (i) => {
+    steps.forEach((s, k) => s.classList.toggle('is-on', k === i));
+    imgs.forEach((m, k) => m.classList.toggle('is-on', k === i));
+    dots.forEach((d, k) => d.classList.toggle('is-on', k <= i));
+    if (num) num.textContent = `0${i + 1} / 03`;
+  };
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) show(+e.target.dataset.stepI); }), { rootMargin: '-45% 0px -45% 0px' });
+    steps.forEach((s) => io.observe(s));
+  }
+
+  // comparison table → package switcher on small screens
+  const tabs = [...document.querySelectorAll('[data-pick]')];
+  const pick = (n) => {
+    tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.pick === n)));
+    document.querySelectorAll('table [data-col]').forEach((c) => c.classList.toggle('is-col', c.dataset.col === n));
+  };
+  tabs.forEach((t) => t.addEventListener('click', () => pick(t.dataset.pick)));
+  tabs.forEach((t, i) => t.addEventListener('keydown', (e) => {
+    const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+    if (!d) return; const next = tabs[(i + d + tabs.length) % tabs.length]; next.focus(); pick(next.dataset.pick);
+  }));
+  pick('2');
+})();
+</script>
+</body>
+</html>

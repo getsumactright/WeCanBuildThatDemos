@@ -1,6 +1,6 @@
 # Client design previews
 
-The Assist: six website concepts and the approved crossover-dribble logo animation.
+The Assist: nine website concepts (three rounds) and the approved crossover-dribble logo animation.
 
 Client preview path: `/the-assist/`.
 
