@@ -219,7 +219,9 @@ body::after{content:"";position:fixed;inset:-50%;pointer-events:none;z-index:150
 
 /* consultation */
 .book{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,96px);align-items:start}
-.book__aside{position:relative;display:flex;flex-direction:column;gap:24px}
+.book__aside{position:relative;display:flex;flex-direction:column;gap:24px;container-type:inline-size}
+/* the heading scales with its column so "CONSULTATION" never runs into the form */
+#book-title{font-size:min(14cqi,96px)}
 #consultation{padding-bottom:0}
 .book{align-items:stretch}
 .book__aside img{width:auto;height:clamp(360px,36vw,560px);margin-top:auto;align-self:flex-start}
