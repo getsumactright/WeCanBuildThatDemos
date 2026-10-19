@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Assist — The Upgrade</title>
+<meta name="description" content="Marcus Ervin helps professional gentlemen increase self-confidence by improving their style and teaching essential fashion principles. Book a consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#16150f; --umber:#1f1d16; --umber-2:#2a271d; --band:#3a3322; --band-2:#4a412c;
+  --bone:#e9e3d3; --bone-dim:rgba(233,227,211,.74); --taupe:#a69f8c; --rule:rgba(166,159,140,.28);
+  --orange:#d9622b; --orange-hi:#ec7a43;
+  --sans:'Host Grotesk',system-ui,sans-serif; --mono:'Host Grotesk',system-ui,sans-serif;
+  --pad:clamp(16px,3.4vw,48px); --max:1440px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px;scrollbar-color:var(--band-2) var(--night)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--night);color:var(--bone);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;caret-color:var(--orange)}
+::selection{background:var(--orange);color:var(--night)}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--night)}::-webkit-scrollbar-thumb{background:var(--band-2);border-radius:10px;border:2px solid var(--night)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:4px}
+:focus-visible{outline:2px solid var(--orange);outline-offset:4px;border-radius:6px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--orange);color:var(--night);padding:12px 16px;z-index:200;border-radius:99px}
+.skip:focus{left:8px}
+/* film grain over everything */
+body::after{content:"";position:fixed;inset:-50%;pointer-events:none;z-index:150;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(3) infinite}
+@keyframes grain{0%{transform:translate(0,0)}33%{transform:translate(-3%,2%)}66%{transform:translate(2%,-3%)}100%{transform:translate(0,0)}}
+@media (prefers-reduced-motion:reduce){body::after{animation:none}}
+
+.pill{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:12px 18px 12px 24px;border-radius:999px;background:var(--orange);color:var(--night);font:600 13px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:background .3s var(--ease),gap .3s var(--ease)}
+.pill svg{width:18px;height:18px;flex:none;transition:transform .3s var(--ease)}
+.pill:hover{background:var(--orange-hi);gap:16px}
+.pill:hover svg{transform:translateX(2px)}
+.pill--bone{background:var(--bone)}
+.pill--bone:hover{background:#fff}
+.pill--ghost{background:transparent;color:var(--bone);box-shadow:inset 0 0 0 1px var(--rule)}
+.pill--ghost:hover{background:rgba(233,227,211,.08)}
+.label{font:600 12px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--taupe)}
+/* warm duotone: grayscale photo + khaki colour layer; blooms to full colour on interaction */
+.tone{position:relative;isolation:isolate;overflow:hidden}
+.tone img{filter:grayscale(1) contrast(1.1) brightness(.9);transition:filter .9s var(--ease),transform 1.2s var(--ease)}
+.tone::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:#a07f4c;mix-blend-mode:color;transition:opacity .9s var(--ease)}
+.tone:hover::before,.tone:focus-visible::before,.tone:focus-within::before,.tone[aria-pressed="true"]::before,.tone.in-view::before{opacity:0}
+.tone:hover img,.tone:focus-visible img,.tone:focus-within img,.tone[aria-pressed="true"] img,.tone.in-view img{filter:none}
+
+/* header */
+.top{position:absolute;inset:0 0 auto;z-index:40}
+.top__row{display:flex;align-items:center;gap:16px;min-height:84px}
+.brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;font:600 15px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase}
+.brand svg{width:22px;height:22px;color:var(--orange)}
+.top__right{margin-left:auto;display:flex;align-items:center;gap:12px}
+.top .pill{min-height:44px;padding:10px 16px 10px 20px;font-size:12px}
+.burger{width:48px;height:48px;border-radius:50%;border:0;background:var(--bone);color:var(--night);display:grid;place-items:center;cursor:pointer;transition:transform .4s var(--ease),background .3s}
+.burger:hover{transform:rotate(90deg);background:#fff}
+.burger svg{width:20px;height:20px}
+.menu{position:fixed;inset:0;z-index:120;background:var(--umber);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);clip-path:circle(0% at calc(100% - 64px) 42px);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu[data-open="true"]{clip-path:circle(150% at calc(100% - 64px) 42px);visibility:visible}
+@media (prefers-reduced-motion:reduce){.menu{transition:none}}
+.menu nav{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 var(--pad)}
+.menu nav a{font:400 clamp(40px,6vw,88px)/1.02 var(--sans);letter-spacing:-.035em;text-transform:uppercase;text-decoration:none;width:max-content;max-width:100%;transition:color .25s,padding .35s var(--ease)}
+.menu nav a:hover,.menu nav a:focus-visible{color:var(--orange);padding-left:14px}
+.menu aside{position:relative;overflow:hidden}
+.menu aside img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.menu__close{position:absolute;top:18px;right:var(--pad);z-index:2}
+.menu__foot{position:absolute;left:var(--pad);bottom:28px;display:flex;gap:24px;flex-wrap:wrap}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:640px;max-height:1100px;overflow:hidden;background:radial-gradient(120% 90% at 50% 100%,#262318 0%,var(--night) 60%)}
+.hero__disc{position:absolute;left:50%;bottom:6%;width:min(54vw,74svh);aspect-ratio:1;border-radius:50%;background:var(--orange);transform:translateX(-50%);z-index:1}
+.hero__type{position:absolute;inset:0;z-index:2;margin:0;pointer-events:none;text-transform:uppercase;font-weight:500;letter-spacing:-.045em;color:var(--bone)}
+.hero__type span{position:absolute;display:block;white-space:nowrap;line-height:.8}
+.t-a{left:var(--pad);top:19%;font-size:clamp(34px,5.4vw,96px);font-weight:400}
+.t-b{left:50%;top:31%;transform:translateX(-50%);font-size:clamp(84px,21.5vw,380px)}
+.t-c{right:var(--pad);top:calc(31% + clamp(70px,17.6vw,312px));font-size:clamp(28px,4.2vw,74px);font-weight:400;letter-spacing:-.03em}
+.hero__type--line{z-index:4;color:transparent;-webkit-text-stroke:1.2px rgba(233,227,211,.8);-webkit-mask:url(../assets/web/r4/marcus-sage-cutout.webp) 50% 100%/auto min(94%,1000px) no-repeat;mask:url(../assets/web/r4/marcus-sage-cutout.webp) 50% 100%/auto min(94%,1000px) no-repeat}
+.hero__marcus{position:absolute;left:50%;bottom:0;height:min(94%,1000px);width:auto;max-width:none;transform:translateX(-50%);z-index:3;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.hero__lede{position:absolute;left:var(--pad);bottom:clamp(28px,5svh,56px);z-index:5;max-width:min(30ch,26vw);display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.hero__lede p{margin:0;font-size:clamp(15px,1.15vw,18px);line-height:1.5;color:var(--bone)}
+.hero__social{position:absolute;left:var(--pad);top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:6px;list-style:none;margin:0;padding:0}
+.hero__social a,.soc a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:var(--bone-dim);transition:color .2s,background .2s}
+.hero__social a:hover,.soc a:hover{color:var(--night);background:var(--orange)}
+.hero__social svg,.soc svg{width:18px;height:18px}
+.badge{position:absolute;right:var(--pad);bottom:clamp(28px,5svh,56px);z-index:5;display:flex;flex-direction:column;align-items:center;gap:14px;text-decoration:none}
+.badge__ring{position:relative;width:clamp(112px,9vw,150px);aspect-ratio:1}
+.badge__ring svg.ring{width:100%;height:100%;animation:spin 22s linear infinite}
+.badge__ring svg.ring text{font:500 9px var(--mono);letter-spacing:.08em;fill:var(--bone);text-transform:uppercase}
+.badge__core{position:absolute;inset:30%;border-radius:50%;background:var(--orange);display:grid;place-items:center;color:var(--night);transition:transform .4s var(--ease)}
+.badge:hover .badge__core{transform:scale(1.08)}
+.badge__core svg{width:44%;height:44%}
+.badge span.label{color:var(--bone-dim)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.badge__ring svg.ring{animation:none}}
+
+/* hero entrance (content visible without JS) */
+.js .hero__marcus{animation:rise 1.5s var(--ease) both .15s, bloom 2.2s ease-out both .25s}
+.js .hero__disc{animation:disc 1.4s var(--ease) both}
+.js .hero__type span{animation:lift 1.1s var(--ease) both}
+.js .hero__type .t-b{animation-name:liftC}
+.js .t-a{animation-delay:.35s!important}.js .t-c{animation-delay:.55s!important}
+@keyframes rise{from{transform:translate(-50%,6%);opacity:0}to{transform:translate(-50%,0);opacity:1}}
+@keyframes bloom{from{filter:grayscale(1) sepia(.5) brightness(.6) drop-shadow(0 30px 40px rgba(0,0,0,.45))}to{filter:grayscale(0) sepia(0) brightness(1) drop-shadow(0 30px 40px rgba(0,0,0,.45))}}
+@keyframes disc{from{transform:translateX(-50%) scale(.6);opacity:0}to{transform:translateX(-50%) scale(1);opacity:1}}
+@keyframes lift{from{transform:translateY(40%);opacity:0}to{transform:none;opacity:1}}
+@keyframes liftC{from{transform:translate(-50%,24%);opacity:0}to{transform:translateX(-50%);opacity:1}}
+@media (prefers-reduced-motion:reduce){.js .hero__marcus,.js .hero__disc,.js .hero__type span{animation:none}}
+
+/* section rhythm */
+.sec{padding:clamp(80px,11vw,168px) 0}
+.h2{font:400 clamp(48px,6vw,96px)/.92 var(--sans);letter-spacing:-.04em;text-transform:uppercase;margin:0}
+.lead{font-size:clamp(17px,1.3vw,20px);color:var(--bone-dim);max-width:46ch;margin:0}
+
+/* meet marcus: interactive collage */
+.meet{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:start}
+.meet__copy{position:sticky;top:48px;display:flex;flex-direction:column;gap:28px}
+.meet__role{display:flex;flex-direction:column;gap:10px;min-height:9.5em;border-top:1px solid var(--rule);padding-top:22px}
+.meet__role strong{font:500 26px/1.1 var(--sans);letter-spacing:-.02em;text-transform:uppercase;color:var(--orange)}
+.meet__role p{margin:0;color:var(--bone-dim);max-width:44ch}
+.collage{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(12,minmax(0,1fr));aspect-ratio:1/1.02}
+.collage__main{grid-column:4/11;grid-row:1/11;position:relative;overflow:hidden;background:var(--umber)}
+.collage__main img{width:100%;height:100%;object-fit:cover;transition:opacity .5s ease,transform 1.2s var(--ease),filter .8s var(--ease)}
+.collage__main img.swap{opacity:0;transform:scale(1.04)}
+.collage__main figcaption{z-index:2;position:absolute;left:0;right:0;bottom:0;padding:48px 20px 18px;background:linear-gradient(transparent,rgba(22,21,15,.85));font:500 clamp(18px,1.6vw,24px)/1.2 var(--sans);letter-spacing:-.02em;text-transform:uppercase}
+.thumb{position:relative;border:0;padding:0;background:var(--umber);cursor:pointer;overflow:hidden;color:var(--bone)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb span{z-index:2;position:absolute;left:8px;bottom:8px;padding:5px 8px;border-radius:4px;background:rgba(22,21,15,.78);font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.thumb[aria-pressed="true"]{outline:2px solid var(--orange);outline-offset:4px}
+.thumb[aria-pressed="true"] span{color:var(--bone)}
+.th-1{grid-column:1/4;grid-row:2/6}
+.th-2{grid-column:1/4;grid-row:7/11}
+.th-3{grid-column:11/13;grid-row:3/7}
+.th-4{grid-column:9/13;grid-row:10/13;z-index:2}
+
+/* find your play band */
+.band{position:relative;background:var(--band);overflow:hidden;min-height:clamp(380px,46vw,620px);display:grid;place-items:center;text-align:center;isolation:isolate}
+.band__img{position:absolute;top:0;bottom:0;width:34%;z-index:-1}
+.band__img{opacity:.5}
+.band__img img{width:100%;height:100%;object-fit:cover}
+.band__img--l{left:0;-webkit-mask-image:linear-gradient(90deg,#000 30%,transparent);mask-image:linear-gradient(90deg,#000 30%,transparent)}
+.band__img--r{right:0;-webkit-mask-image:linear-gradient(270deg,#000 30%,transparent);mask-image:linear-gradient(270deg,#000 30%,transparent)}
+.band h2{font:400 clamp(52px,7vw,104px)/.9 var(--sans);letter-spacing:-.045em;text-transform:uppercase;margin:0 0 30px}
+.band p{margin:0 auto 30px;max-width:44ch;color:var(--bone)}
+
+/* plays: expanding panels */
+.plays__head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;margin-bottom:clamp(36px,5vw,64px)}
+.panels{display:flex;height:clamp(480px,48vw,680px);gap:2px}
+.panel{position:relative;flex:1 1 0;min-width:0;overflow:hidden;background:var(--umber);transition:flex-grow .8s var(--ease);outline-offset:-2px;cursor:default}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.panel::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(22,21,15,0) 35%,rgba(22,21,15,.92) 88%);transition:opacity .6s}
+.panel__body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(18px,2vw,30px);display:flex;flex-direction:column;gap:10px}
+.panel h3{margin:0;font:500 clamp(22px,2vw,32px)/1 var(--sans);letter-spacing:-.025em;text-transform:uppercase}
+.panel .tier{color:var(--bone-dim);margin-top:-4px}
+.panel__more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .7s var(--ease)}
+.panel__more > div{overflow:hidden;display:flex;flex-direction:column;gap:12px}
+.panel__more p{margin:0;font-size:16px;color:var(--bone)}
+.panel__more ul{margin:0;padding:0;list-style:none;display:grid;gap:4px;font-size:15px;color:var(--bone-dim)}
+.panel__more li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--orange);margin-right:10px;transform:translateY(-2px)}
+.panel__more .pill{align-self:flex-start;margin-top:6px}
+.panel.is-open{flex-grow:2.6}
+.panel.is-open::after{background:linear-gradient(180deg,rgba(22,21,15,.08) 12%,rgba(22,21,15,.72) 40%,rgba(22,21,15,.96) 62%)}
+.panel.is-open img{transform:scale(1.03)}
+.panel.is-open .panel__more{grid-template-rows:1fr}
+.panel-tab{all:unset;position:absolute;inset:0;z-index:3;cursor:pointer}
+.panel.is-open .panel-tab{pointer-events:none}
+.panel-tab:focus-visible{outline:2px solid var(--orange);outline-offset:-4px}
+.plays__nav{display:none;justify-content:center;gap:10px;margin-top:22px}
+.round{width:52px;height:52px;border-radius:50%;border:0;background:var(--umber-2);color:var(--bone);display:grid;place-items:center;cursor:pointer;transition:background .2s}
+.round:hover{background:var(--orange);color:var(--night)}
+.round svg{width:18px;height:18px}
+
+/* lookbook */
+.lookbook{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:clamp(640px,62vw,900px)}
+.lb__left{background:var(--night);position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:28px;padding:clamp(48px,6vw,96px) var(--pad) clamp(220px,20vw,300px);overflow:hidden}
+.lb__strip{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(28px,4vw,56px);display:flex;align-items:flex-end;gap:10px;list-style:none;margin:0;padding:0}
+.lb__strip li{flex:1;min-width:0}
+.lb__strip li:nth-child(odd){transform:translateY(-14%)}
+.lb__strip button{all:unset;display:block;cursor:pointer;width:100%;aspect-ratio:3/4;overflow:hidden;background:var(--umber);transition:transform .5s var(--ease);box-shadow:0 18px 30px -18px rgba(0,0,0,.7)}
+.lb__strip button.tone{position:relative;isolation:isolate}
+.lb__strip button img{width:100%;height:100%;object-fit:cover}
+.lb__strip button:hover,.lb__strip button:focus-visible{transform:translateY(-10px)}
+.lb__strip button:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.lb__strip button[aria-pressed="true"]{outline:2px solid var(--orange);outline-offset:3px}
+.lb__right{background:var(--band);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:26px;padding:clamp(48px,6vw,96px) var(--pad);text-align:center}
+.lb__feature{width:min(78%,440px);aspect-ratio:4/5;overflow:hidden;background:var(--umber)}
+.lb__feature img{width:100%;height:100%;object-fit:cover;transform:scale(1.07);transition:opacity .45s ease}
+.lb__feature img.swap{opacity:0}
+.lb__right h3{margin:0;font:400 clamp(26px,2.4vw,38px)/1 var(--sans);letter-spacing:-.03em;text-transform:uppercase}
+.lb__right p{margin:0;max-width:40ch;color:var(--bone);font-size:16px}
+
+/* add-ons */
+.ones{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,5vw,80px);align-items:start}
+.ones ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.ones li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;padding:28px 0;border-bottom:1px solid var(--rule)}
+.ones h3{margin:0;font:500 clamp(22px,2vw,30px)/1.05 var(--sans);letter-spacing:-.02em;text-transform:uppercase}
+.ones li p{margin:0;color:var(--bone-dim)}
+.ones li h3 small{display:block;margin-top:10px}
+
+/* motion */
+.motion{background:var(--umber)}
+.motion__grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,5vw,80px);align-items:center}
+.screen{border-radius:20px;overflow:hidden;background:#000;box-shadow:0 40px 70px -40px rgba(0,0,0,.8)}
+.screen__media{position:relative;aspect-ratio:16/9}
+.screen__media video,.screen__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.screen__media video{mix-blend-mode:screen}
+.is-playing .screen__media img{visibility:hidden}
+.screen__bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;background:#0d0c08}
+.screen__bar p{margin:0;font-size:14.5px;color:var(--bone-dim)}
+.screen__bar .btns{display:flex;gap:8px}
+.screen__bar button{min-height:44px;padding:8px 18px;border-radius:99px;border:0;background:var(--umber-2);color:var(--bone);font:600 12px var(--sans);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.screen__bar button:hover{background:var(--orange);color:var(--night)}
+[hidden]{display:none!important}
+
+/* consultation */
+.book{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,96px);align-items:start}
+.book__aside{position:relative;display:flex;flex-direction:column;gap:24px}
+#consultation{padding-bottom:0}
+.book{align-items:stretch}
+.book__aside img{width:auto;height:clamp(360px,36vw,560px);margin-top:auto;align-self:flex-start}
+form.form{padding-bottom:clamp(80px,9vw,140px)}
+form.form{display:grid;grid-template-columns:1fr 1fr;gap:30px 28px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field--full{grid-column:1/-1}
+.field label{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--taupe)}
+.field input,.field textarea{font:400 19px/1.4 var(--sans);color:var(--bone);background:transparent;border:0;border-bottom:1px solid var(--rule);border-radius:0;padding:10px 0 12px;min-height:50px;transition:border-color .25s}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--orange)}
+.field [aria-invalid="true"]{border-color:#ff8f6b}
+.form__foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.status{flex-basis:100%;margin:0;min-height:1.5em;font-size:15px;color:var(--bone-dim)}
+
+/* footer */
+footer{background:var(--band);padding:clamp(48px,6vw,80px) 0 30px}
+.foot{display:grid;grid-template-columns:minmax(0,6fr) repeat(2,minmax(0,3fr));gap:32px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:2px;align-content:start}
+.foot ul a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font:500 13px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim)}
+.foot ul a:hover{color:var(--orange-hi)}
+.soc{display:flex;gap:4px;list-style:none;margin:20px 0 0;padding:0}
+.foot__note{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:48px;padding-top:20px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--bone-dim)}
+
+
+/* responsive */
+@media (max-width:1024px){
+  .meet,.ones,.motion__grid,.book{grid-template-columns:minmax(0,1fr)}
+  .meet__copy{position:static}
+  .lookbook{grid-template-columns:minmax(0,1fr)}
+  .hero__lede{max-width:34ch}
+  .menu{grid-template-columns:1fr}
+  .menu aside{display:none}
+}
+@media (max-width:760px){
+  .top .pill{display:none}
+  .hero{height:auto;min-height:0;max-height:none;padding-top:84px;display:flex;flex-direction:column}
+  .hero__stage{position:relative;height:min(118vw,620px)}
+  .hero__disc{width:86vw;bottom:4%}
+  .t-a{top:2%;font-size:9.4vw}
+  .t-b{top:33%;font-size:19vw}
+  .t-c{top:calc(33% + 16vw);right:var(--pad);font-size:6.6vw}
+  .hero__type--line .t-c{color:var(--bone);-webkit-text-stroke:0}
+  .hero__type--line{-webkit-mask-size:auto 86%;mask-size:auto 86%}
+  .hero__marcus{height:86%}
+  .hero__social{display:none}
+  .hero__lede{position:static;max-width:none;padding:24px var(--pad) 8px;border-top:1px solid var(--rule)}
+  .badge{position:static;flex-direction:row;padding:8px var(--pad) 32px;justify-content:flex-start}
+  .badge__ring{width:96px}
+  .panels{height:auto;flex-direction:column;gap:2px}
+  .panel{flex:none;height:auto;min-height:0}
+  .panel img{position:relative;height:300px}
+  .panel::after{top:auto;height:300px}
+  .panel__body{position:relative;background:var(--umber)}
+  .panel__more{grid-template-rows:1fr}
+  .panel-tab{display:none}
+  .collage{aspect-ratio:auto;display:flex;flex-direction:column;gap:12px}
+  .collage__main{aspect-ratio:4/5}
+  .collage__thumbs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .thumb{aspect-ratio:4/3;grid-column:auto;grid-row:auto}
+  .th-4{z-index:auto}
+  .ones li{grid-template-columns:1fr;gap:10px}
+  .book__aside img{display:none}
+  form.form{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr}
+  .foot > div:first-child{grid-column:1/-1}
+  .lb__strip{right:0;padding:0 var(--pad);gap:8px}
+  .lb__strip li{margin:0}
+  .lb__strip li:nth-child(odd){transform:none}
+}
+.collage__thumbs{display:contents}
+@media (max-width:760px){.collage__thumbs{display:grid}}
+</style>
+<meta name="robots" content="noindex,nofollow"></head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M19 12H6M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ball" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.2"/><path d="M2.8 12h18.4M12 2.8v18.4M5.5 5.4c3.2 3.6 3.2 9.6 0 13.2M18.5 5.4c-3.2 3.6-3.2 9.6 0 13.2"/></g></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/></g><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><g fill="currentColor"><rect x="4" y="9" width="3.2" height="11" rx=".6"/><circle cx="5.6" cy="5.4" r="1.9"/><path d="M10 9h3v1.6c.6-1 1.8-1.9 3.7-1.9 2.6 0 3.8 1.6 3.8 4.6V20h-3.2v-6c0-1.6-.6-2.5-1.9-2.5-1.4 0-2.2 1-2.2 2.6V20H10z"/></g></symbol>
+  <symbol id="i-tt" viewBox="0 0 24 24"><path d="M14 3.5v10.8a3.7 3.7 0 1 1-3.7-3.7M14 3.5c.4 2.6 2.2 4.4 5 4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2.8" y="5.6" width="18.4" height="12.8" rx="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.2 9.4v5.2l4.6-2.6z" fill="currentColor"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap top__row">
+    <a class="brand" href="#main"><svg aria-hidden="true"><use href="#i-ball"/></svg>The Assist</a>
+    <div class="top__right">
+      <a class="pill" href="#consultation">Book a consultation<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <button class="burger" type="button" data-nav-toggle aria-controls="menu" aria-expanded="false" aria-label="Open menu"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="burger menu__close" type="button" data-menu-close aria-label="Close menu"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+  <nav aria-label="Main">
+    <a href="#meet">Meet Marcus</a>
+    <a href="#plays">The plays</a>
+    <a href="#lookbook">Lookbook</a>
+    <a href="#and-ones">And 1's</a>
+    <a href="#consultation">Book a consultation</a>
+  </nav>
+  <aside class="tone" aria-hidden="true"><img src="../assets/web/r3/city-1600.webp" width="1200" height="1600" alt="" loading="lazy"></aside>
+  <div class="menu__foot"><span class="label">Style coach · Trainer · Barber</span></div>
+</div>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__stage">
+      <div class="hero__disc" aria-hidden="true"></div>
+      <h1 class="hero__type" id="hero-title" aria-label="Discover the MVP you've always been">
+        <span class="t-a" aria-hidden="true">Discover</span>
+        <span class="t-b" aria-hidden="true">The MVP</span>
+        <span class="t-c" aria-hidden="true">you've always been.</span>
+      </h1>
+      <img class="hero__marcus" src="../assets/web/r4/marcus-sage-cutout.webp" width="744" height="1351" alt="Marcus Ervin in a sage double-breasted check suit and white turtleneck" fetchpriority="high">
+      <p class="hero__type hero__type--line" aria-hidden="true">
+        <span class="t-a">Discover</span>
+        <span class="t-b">The MVP</span>
+        <span class="t-c">you've always been.</span>
+      </p>
+      <ul class="hero__social" aria-label="Follow Marcus">
+        <li><a href="https://www.instagram.com/themarcuservin" rel="noopener" target="_blank" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-ig"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/marcuservin/" rel="noopener" target="_blank" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-in"/></svg></a></li>
+        <li><a href="https://www.tiktok.com/@themarcuservin" rel="noopener" target="_blank" aria-label="TikTok"><svg aria-hidden="true"><use href="#i-tt"/></svg></a></li>
+        <li><a href="https://www.youtube.com/@TheMarcusErvin" rel="noopener" target="_blank" aria-label="YouTube"><svg aria-hidden="true"><use href="#i-yt"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="hero__lede">
+      <p>I help professional gentlemen increase self confidence by improving your style &amp; teaching you essential fashion principles.</p>
+      <a class="pill" href="#consultation">Book a consultation<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <a class="badge" href="#meet" aria-label="Scroll to meet Marcus">
+      <span class="badge__ring" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 120 120"><defs><path id="ring" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text><textPath href="#ring" textLength="286" lengthAdjust="spacing">The Assist · Style coach · Trainer · Barber ·</textPath></text></svg>
+        <span class="badge__core"><svg><use href="#i-ball"/></svg></span>
+      </span>
+      <span class="label">Scroll for more</span>
+    </a>
+  </section>
+
+  <section class="sec" id="meet" aria-labelledby="meet-title">
+    <div class="wrap meet">
+      <div class="meet__copy" data-reveal>
+        <h2 class="h2" id="meet-title">Meet<br>Marcus Ervin</h2>
+        <p class="lead">Think of me as your style coach, trainer, and barber — all in one. Every quarter of The Assist is designed to unlock a different level of your confidence.</p>
+        <div class="meet__role" aria-live="polite">
+          <strong data-role="name">The coach</strong>
+          <p data-role="text">I have read many books and taken hours upon hours of instructional classes to build up a wealth of knowledge to assist you. My aim is to pass you the ball and facilitate your success.</p>
+        </div>
+        <a class="pill pill--ghost" href="#consultation" style="align-self:flex-start">Book a consultation<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="collage" data-reveal>
+        <figure class="collage__main tone" style="margin:0">
+          <img data-role="img" src="../assets/web/r3/cream-bw-1600.webp" width="1440" height="1440" alt="Marcus Ervin in a cream jacket in front of a shop window" loading="lazy">
+          <figcaption data-role="cap">Style coach</figcaption>
+        </figure>
+        <div class="collage__thumbs" role="group" aria-label="Marcus's roles">
+          <button class="thumb th-1 tone" type="button" aria-pressed="true" data-role-i="0"><img src="../assets/web/r3/sage-800.webp" width="569" height="800" alt="" loading="lazy"><span>The coach</span></button>
+          <button class="thumb th-2 tone" type="button" aria-pressed="false" data-role-i="1"><img src="../assets/web/r3/yellow-wall-800.webp" width="576" height="800" alt="" loading="lazy"><span>The trainer</span></button>
+          <button class="thumb th-3 tone" type="button" aria-pressed="false" data-role-i="2"><img src="../assets/web/r3/sky-wall-800.webp" width="600" height="800" alt="" loading="lazy"><span>The barber</span></button>
+          <button class="thumb th-4 tone" type="button" aria-pressed="false" data-role-i="3"><img src="../assets/web/r3/black-suit-800.webp" width="800" height="581" alt="" loading="lazy" style="object-position:40% 30%"><span>The speaker</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="band-title">
+    <div class="band__img band__img--l tone" aria-hidden="true"><img src="../assets/web/r3/city-1600.webp" width="1200" height="1600" alt="" loading="lazy"></div>
+    <div class="band__img band__img--r tone" aria-hidden="true"><img src="../assets/web/r3/blue-check-1600.webp" width="1600" height="1325" alt="" loading="lazy"></div>
+    <div class="wrap" data-reveal>
+      <h2 id="band-title">Find your<br>play</h2>
+      <p>Three ways to work together, from a plan you run yourself to a wardrobe handled for you. Every one begins with an in-person consultation.</p>
+      <a class="pill pill--bone" href="#plays">See the plays<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </section>
+
+  <section class="sec" id="plays" aria-labelledby="plays-title">
+    <div class="wrap plays__head" data-reveal>
+      <h2 class="h2" id="plays-title">The plays</h2>
+      <p class="lead">Unlock your full potential with a fresh look, elite grooming, and a winning mindset.</p>
+    </div>
+    <div class="panels" data-panels>
+      <article class="panel tone is-open">
+        <button class="panel-tab" type="button" aria-expanded="true" aria-controls="p1"><span class="sr" style="position:absolute;left:-9999px">Show The Outlet Pass</span></button>
+        <img src="../assets/web/r3/sky-wall-1600.webp" width="1200" height="1600" alt="" loading="lazy" style="object-position:60% 30%">
+        <div class="panel__body">
+          <h3>The Outlet Pass</h3>
+          <span class="label tier">The Rookie Deal</span>
+          <div class="panel__more" id="p1"><div>
+            <p>“I pass you the ball. You run with it.” For the self-motivated client who wants expert guidance but shops solo.</p>
+            <ul><li>In-person style consultation</li><li>Personalized measurement profile</li><li>Custom style plan + shopping links</li></ul>
+            <a class="pill" href="#consultation" data-prefill="Hi Marcus — I'm interested in The Outlet Pass.">Book this play<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div></div>
+        </div>
+      </article>
+      <article class="panel tone">
+        <button class="panel-tab" type="button" aria-expanded="false" aria-controls="p2"><span style="position:absolute;left:-9999px">Show The Pick &amp; Roll</span></button>
+        <img src="../assets/web/r3/blue-check-1600.webp" width="1600" height="1325" alt="" loading="lazy" style="object-position:50% 40%">
+        <div class="panel__body">
+          <h3>The Pick &amp; Roll</h3>
+          <span class="label tier">For the Seasoned Veteran</span>
+          <div class="panel__more" id="p2"><div>
+            <p>“We play together — step-by-step styling support.” Shopping sessions together, with style principles that last.</p>
+            <ul><li>In-person consultation</li><li>Full measurement profile</li><li>Bespoke color analysis</li><li>Live shopping sessions + style education</li></ul>
+            <a class="pill" href="#consultation" data-prefill="Hi Marcus — I'm interested in The Pick & Roll.">Book this play<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div></div>
+        </div>
+      </article>
+      <article class="panel tone">
+        <button class="panel-tab" type="button" aria-expanded="false" aria-controls="p3"><span style="position:absolute;left:-9999px">Show The Give &amp; Go</span></button>
+        <img src="../assets/web/r3/shoe-shine-1600.webp" width="1600" height="1067" alt="" loading="lazy" style="object-position:40% 50%">
+        <div class="panel__body">
+          <h3>The Give &amp; Go</h3>
+          <span class="label tier">For the Hall of Famer</span>
+          <div class="panel__more" id="p3"><div>
+            <p>“Hand it off — I'll handle everything.” Designed for professionals who value time and want a done-for-you experience.</p>
+            <ul><li>Full wardrobe plan curated &amp; delivered</li><li>Alterations, fittings, dry cleaning, shoe care</li><li>Personal lookbook + multiple 1-on-1 sessions</li></ul>
+            <a class="pill" href="#consultation" data-prefill="Hi Marcus — I'm interested in The Give & Go.">Book this play<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div></div>
+        </div>
+      </article>
+      <article class="panel tone">
+        <button class="panel-tab" type="button" aria-expanded="false" aria-controls="p4"><span style="position:absolute;left:-9999px">Show the And 1's</span></button>
+        <img src="../assets/web/r3/tie-detail-1600.webp" width="1600" height="1067" alt="" loading="lazy" style="object-position:55% 50%">
+        <div class="panel__body">
+          <h3>And 1's</h3>
+          <div class="panel__more" id="p4"><div>
+            <p>Additional services I offer as add-ons to any play.</p>
+            <ul><li>Haircut and/or beard trim</li><li>Workout &amp; weight training</li><li>Public speaking &amp; professional presence</li></ul>
+            <a class="pill" href="#and-ones">See the add-ons<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="lookbook" id="lookbook" aria-labelledby="lb-title">
+    <div class="lb__left">
+      <h2 class="h2" id="lb-title" data-reveal>The<br>lookbook</h2>
+      <p class="lead" data-reveal>Six looks from Marcus's own wardrobe. Tap one to bring it forward.</p>
+      <ul class="lb__strip" aria-label="Choose a look">
+        <li><button class="tone" type="button" aria-pressed="true" data-look="0" aria-label="Look 01, sage double-breasted"><img src="../assets/web/r3/sage-800.webp" width="569" height="800" alt="" loading="lazy"></button></li>
+        <li><button class="tone" type="button" aria-pressed="false" data-look="1" aria-label="Look 02, yellow turtleneck"><img src="../assets/web/r3/yellow-wall-800.webp" width="576" height="800" alt="" loading="lazy"></button></li>
+        <li><button class="tone" type="button" aria-pressed="false" data-look="2" aria-label="Look 03, blue windowpane suit"><img src="../assets/web/r3/blue-check-800.webp" width="800" height="663" alt="" loading="lazy"></button></li>
+        <li><button class="tone" type="button" aria-pressed="false" data-look="3" aria-label="Look 04, after dark"><img src="../assets/web/r3/times-square-800.webp" width="600" height="800" alt="" loading="lazy"></button></li>
+        <li><button class="tone" type="button" aria-pressed="false" data-look="4" aria-label="Look 05, all black"><img src="../assets/web/r3/sky-wall-800.webp" width="600" height="800" alt="" loading="lazy"></button></li>
+        <li><button class="tone" type="button" aria-pressed="false" data-look="5" aria-label="Look 06, navy downtown"><img src="../assets/web/r3/city-800.webp" width="600" height="800" alt="" loading="lazy"></button></li>
+      </ul>
+    </div>
+    <div class="lb__right" aria-live="polite">
+      <figure class="lb__feature" style="margin:0"><img data-look-img src="../assets/web/r3/sage-1600.webp" width="1016" height="1429" alt="Marcus in a sage double-breasted check suit" loading="lazy"></figure>
+      <h3 data-look-title>Look 01 — Sage double-breasted</h3>
+      <p data-look-text>Sage windowpane check, white turtleneck and a gold silk pocket square: tailoring without a tie, still completely finished.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="and-ones" aria-labelledby="ones-title">
+    <div class="wrap ones">
+      <div data-reveal>
+        <h2 class="h2" id="ones-title">And 1's</h2>
+        <p class="lead" style="margin-top:22px">Additional services I offer as add-ons.</p>
+      </div>
+      <ul>
+        <li data-reveal><h3>Haircut and/or beard trim<small class="label">The barber</small></h3><p>Using my decades-long experience as a skilled barber, together we will figure out the cut and style that works perfectly for your head shape, hair type, career/relationship goals, and lifestyle.</p></li>
+        <li data-reveal><h3>Workout &amp; weight training<small class="label">The trainer</small></h3><p>Let's head to a local gym, where we will do a workout together, tailored to your fitness level and goals, with what has helped me grow muscle, eat properly and improve my mental &amp; emotional health.</p></li>
+        <li data-reveal><h3>Public speaking &amp; presence<small class="label">The speaker</small></h3><p>An upcoming work presentation causing some anxiety? As an experienced public speaker and business professional, I'll guide you in preparing your speech and delivering it with poise &amp; confidence.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec motion" aria-labelledby="motion-title">
+    <div class="wrap motion__grid">
+      <div data-reveal>
+        <h2 class="h2" id="motion-title" style="font-size:clamp(40px,4.6vw,72px)">The Assist, in motion</h2>
+        <p class="lead" style="margin-top:22px">Six seconds, no sound: a suited man, a basketball, and a little rhythm.</p>
+      </div>
+      <div class="screen" data-motion data-reveal>
+        <div class="screen__media">
+          <video muted playsinline preload="metadata" aria-label="A suited man bounces a basketball from hand to hand above the words The Assist"><source src="../assets/animation/the-assist-dribble.mp4" type="video/mp4"></video>
+          <img data-still src="../assets/animation/dribble-final.png" alt="The Assist logo: a suited man holding a basketball" loading="lazy">
+        </div>
+        <div class="screen__bar">
+          <p role="status" aria-live="polite" data-motion-status>Style, confidence, and a little rhythm.</p>
+          <div class="btns"><button type="button" data-motion-pause hidden>Pause</button><button type="button" data-motion-replay>Replay</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="consultation" aria-labelledby="book-title">
+    <div class="wrap book">
+      <div class="book__aside" data-reveal>
+        <h2 class="h2" id="book-title">Book a<br>consultation</h2>
+        <p class="lead">An opportunity for me to get to know you as a person &amp; learn what your specific needs and wants are. Let's run the play.</p>
+        <img src="../assets/web/r4/marcus-city-cutout.webp" width="584" height="1700" alt="Marcus Ervin in a navy suit, buttoning his jacket" loading="lazy">
+      </div>
+      <form class="form" data-demo-form novalidate data-reveal>
+        <div class="field"><label for="f-first">First name</label><input id="f-first" name="first" autocomplete="given-name" required></div>
+        <div class="field"><label for="f-last">Last name</label><input id="f-last" name="last" autocomplete="family-name" required></div>
+        <div class="field field--full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field field--full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="What would you like to work on?"></textarea></div>
+        <div class="form__foot">
+          <span class="label">Demo form · nothing is sent</span>
+          <button class="pill" type="submit">Send<svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <p class="status" role="status" aria-live="polite" data-form-status></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#main"><svg aria-hidden="true"><use href="#i-ball"/></svg>The Assist</a>
+        <ul class="soc" aria-label="Follow Marcus">
+          <li><a href="https://www.instagram.com/themarcuservin" rel="noopener" target="_blank" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-ig"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/marcuservin/" rel="noopener" target="_blank" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-in"/></svg></a></li>
+          <li><a href="https://www.tiktok.com/@themarcuservin" rel="noopener" target="_blank" aria-label="TikTok"><svg aria-hidden="true"><use href="#i-tt"/></svg></a></li>
+          <li><a href="https://www.youtube.com/@TheMarcusErvin" rel="noopener" target="_blank" aria-label="YouTube"><svg aria-hidden="true"><use href="#i-yt"/></svg></a></li>
+        </ul>
+      </div>
+      <ul aria-label="Explore"><li><a href="#meet">Meet Marcus</a></li><li><a href="#plays">The plays</a></li><li><a href="#lookbook">Lookbook</a></li></ul>
+      <ul aria-label="Services"><li><a href="#and-ones">And 1's</a></li><li><a href="#consultation">Book a consultation</a></li></ul>
+    </div>
+    <p class="foot__note"><span>© <span data-year>2026</span> by THE ASSIST. All rights reserved.</span><span>Design demo 10, The Upgrade. Headlines and look captions are proposed copy. Booking is not connected yet.</span></p>
+  </div>
+</footer>
+
+<script src="round-three.js" defer></script>
+<script>
+(() => {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const swapImg = (img, src, w, h, alt, pos) => {
+    if (img.getAttribute('src') === src) return;
+    const go = () => { img.src = src; img.width = w; img.height = h; img.alt = alt; img.style.objectPosition = pos || ''; img.classList.remove('swap'); };
+    if (reduced) return go();
+    img.classList.add('swap'); setTimeout(go, 380);
+  };
+
+  // Menu overlay: close button + focus
+  const menu = document.getElementById('menu');
+  const opener = document.querySelector('[data-nav-toggle]');
+  document.querySelector('[data-menu-close]').addEventListener('click', () => opener.click());
+  new MutationObserver(() => {
+    const open = menu.dataset.open === 'true';
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    if (open) menu.querySelector('nav a').focus();
+  }).observe(menu, { attributes: true, attributeFilter: ['data-open'] });
+
+  // Meet Marcus: roles swap the large portrait and the text (source wording)
+  const roles = [
+    { name: 'The coach', cap: 'Style coach', img: ['../assets/web/r3/cream-bw-1600.webp', 1440, 1440, 'Marcus Ervin in a cream jacket in front of a shop window'], text: 'I have read many books and taken hours upon hours of instructional classes to build up a wealth of knowledge to assist you. My aim is to pass you the ball and facilitate your success.' },
+    { name: 'The trainer', cap: 'Trainer', img: ['../assets/web/r3/yellow-wall-1600.webp', 1002, 1394, 'Marcus in a yellow turtleneck against a graffiti wall'], text: "Let's head to a local gym, where we will do a workout together, tailored to your fitness level and goals. I'll share what has helped me grow muscle, stay in shape and eat properly." },
+    { name: 'The barber', cap: 'Barber', img: ['../assets/web/r3/sky-wall-1600.webp', 1200, 1600, 'Marcus in an all-black outfit against a sky-blue wall'], text: 'Using my decades-long experience as a skilled barber, together we will figure out the cut and style that works perfectly for your head shape, hair type, goals, and lifestyle.' },
+    { name: 'The speaker', cap: 'Public speaker', img: ['../assets/web/r3/black-suit-1600.webp', 1600, 1162, 'Marcus in a black suit and green tie fastening his jacket'], pos: '40% 30%', text: "As an experienced public speaker and business professional, I'll guide you in preparing your speech and delivering it in a way that displays poise & confidence." }
+  ];
+  const thumbs = [...document.querySelectorAll('[data-role-i]')];
+  const big = document.querySelector('[data-role="img"]');
+  thumbs.forEach((t) => t.addEventListener('click', () => {
+    const r = roles[+t.dataset.roleI];
+    thumbs.forEach((x) => x.setAttribute('aria-pressed', String(x === t)));
+    document.querySelector('[data-role="name"]').textContent = r.name;
+    document.querySelector('[data-role="text"]').textContent = r.text;
+    document.querySelector('[data-role="cap"]').textContent = r.cap;
+    swapImg(big, ...r.img, r.pos);
+  }));
+
+  // Touch screens have no hover: bloom duotone photos while they sit mid-screen
+  if (!matchMedia('(hover:hover)').matches && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('in-view', e.isIntersecting)), { rootMargin: '-35% 0px -35% 0px' });
+    document.querySelectorAll('.tone').forEach((el) => io.observe(el));
+  }
+
+  // Plays: one panel open at a time
+  const panels = [...document.querySelectorAll('[data-panels] .panel')];
+  const openPanel = (p) => panels.forEach((x) => { const on = x === p; x.classList.toggle('is-open', on); x.querySelector('.panel-tab').setAttribute('aria-expanded', String(on)); });
+  panels.forEach((p) => {
+    p.querySelector('.panel-tab').addEventListener('click', () => openPanel(p));
+    if (matchMedia('(hover:hover)').matches) p.addEventListener('mouseenter', () => openPanel(p));
+  });
+
+  // Lookbook: the strip brings a look forward
+  const looks = [
+    ['../assets/web/r3/sage-1600.webp', 1016, 1429, 'Marcus in a sage double-breasted check suit', 'Look 01 — Sage double-breasted', 'Sage windowpane check, white turtleneck and a gold silk pocket square: tailoring without a tie, still completely finished.'],
+    ['../assets/web/r3/yellow-wall-1600.webp', 1002, 1394, 'Marcus in a yellow turtleneck and check trousers', 'Look 02 — Yellow turtleneck', 'A bright knit, light check trousers and statement sneakers. Colour worn with confidence, off duty.'],
+    ['../assets/web/r3/blue-check-1600.webp', 1600, 1325, 'Marcus in a blue windowpane suit with an orange tie', 'Look 03 — Blue windowpane', 'A blue check suit, an orange patterned tie and a white pocket square. Pattern and colour, balanced.'],
+    ['../assets/web/r3/times-square-1600.webp', 1200, 1600, 'Marcus in a yellow tee and khaki chinos at night', 'Look 04 — After dark', 'A yellow tee and khaki chinos under the lights. Simple pieces, sharp fit.'],
+    ['../assets/web/r3/sky-wall-1600.webp', 1200, 1600, 'Marcus in an all-black outfit', 'Look 05 — All black', 'Fitted tee, trousers, belt and shoes in one colour: the easiest way to look tall and deliberate.'],
+    ['../assets/web/r3/city-1600.webp', 1200, 1600, 'Marcus in a navy suit downtown', 'Look 06 — Navy downtown', 'A navy suit over a blue knit with a gold pocket square. Business, without the tie.']
+  ];
+  const lbBtns = [...document.querySelectorAll('[data-look]')];
+  const lbImg = document.querySelector('[data-look-img]');
+  lbBtns.forEach((b) => b.addEventListener('click', () => {
+    const l = looks[+b.dataset.look];
+    lbBtns.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    swapImg(lbImg, l[0], l[1], l[2], l[3]);
+    document.querySelector('[data-look-title]').textContent = l[4];
+    document.querySelector('[data-look-text]').textContent = l[5];
+  }));
+})();
+</script>
+</body>
+</html>
